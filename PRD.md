@@ -860,7 +860,7 @@ Body:
 ## 12. Struktur Folder
 
 ```
-bulawngandung/
+bulaungandung/
 ├── app/
 │   ├── [locale]/
 │   │   ├── layout.tsx
@@ -993,7 +993,7 @@ bulawngandung/
 |---|---|---|
 | Data 25 kelompok belum tersedia | Tinggi | Gunakan data dummy dulu, update via Sanity Studio |
 | Logo & foto real kosong | Tinggi | Placeholder (unsplash/picsum), ganti via Sanity Studio |
-| Domain belum ada | Sedang | Deploy ke Vercel subdomain dulu (`bulawngandung.vercel.app`) |
+| Domain belum ada | Sedang | Deploy ke Vercel subdomain dulu (`bulaungandung.vercel.app`) |
 | Admin tidak familiar Sanity Studio | Sedang | Sanity Studio user-friendly — cukup login & edit form fields |
 | Vercel Hobby tier limit | Rendah | 100GB bandwidth, cukup untuk tahap awal |
 | Konten multilingual kosong | Sedang | Isi `id` dulu, locale lain pakai fallback atau Google Translate |

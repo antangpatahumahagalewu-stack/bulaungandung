@@ -168,7 +168,7 @@ T+24 HOURS: First Day Review
   ├── [ ] Traffic analysis: top pages, bounce rate, locale distribution
   ├── [ ] Performance snapshot: LCP, CLS, INP
   ├── [ ] Error log review (Sentry)
-  ├── [ ] SEO: indexed pages check (site:bulawngandung.com)
+  ├── [ ] SEO: indexed pages check (site:bulaungandung.com)
   └── [ ] User feedback collection (form entries, email)
 
 T+7 DAYS: First Week Review
@@ -347,7 +347,7 @@ SCENARIO E: DNS Hijack / Domain Issue
     1. Verify domain registration active (not expired)
     2. Verify nameserver settings at registrar
     3. Contact registrar support
-    4. Emergency: deploy to Vercel subdomain (bulawngandung.vercel.app)
+    4. Emergency: deploy to Vercel subdomain (bulaungandung.vercel.app)
 
 BACKUP STRATEGY:
   ├── Sanity: automatic backups (Sanity handles)

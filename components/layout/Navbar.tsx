@@ -1,5 +1,7 @@
 "use client";
 
+import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
@@ -23,19 +25,31 @@ const navItems = [
 export function Navbar() {
   const t = useTranslations("nav");
   const pathname = usePathname();
+  const [logoHovered, setLogoHovered] = useState(false);
 
   const pathWithoutLocale = pathname.replace(/^\/(id|en|zh|ja)/, "") || "/";
 
   return (
     <header className="sticky top-0 z-40 w-full bg-card border-b border-bdr-subtle shadow-sm">
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 sm:px-8 lg:px-10">
+      <div className={cn(
+        "mx-auto flex max-w-7xl items-center justify-between px-6 sm:px-8 lg:px-10 transition-all duration-300",
+        logoHovered ? "h-40" : "h-20"
+      )}>
         <Link
           href="/"
-          className="flex items-center gap-2.5 text-lg font-semibold tracking-tight text-pri transition-opacity hover:opacity-80"
+          onMouseEnter={() => setLogoHovered(true)}
+          onMouseLeave={() => setLogoHovered(false)}
+          className="group flex items-center gap-2.5 text-lg font-semibold tracking-tight text-pri transition-opacity hover:opacity-80"
           style={{ fontFamily: "var(--font-serif)" }}
         >
-          <span className="text-xl tracking-widest text-acc">B</span>
-          <span className="hidden sm:inline">Bulau Ngandung</span>
+          <Image
+            src="/logo.png"
+            alt="Bulau Ngandung"
+            width={192}
+            height={192}
+            className="h-[72px] w-auto transition-transform duration-300 group-hover:scale-[2]"
+          />
+          <span className="text-lg tracking-tight transition-transform duration-300 group-hover:translate-x-8">Bulau Ngandung</span>
         </Link>
 
         <nav className="hidden items-center gap-0.5 md:flex">

@@ -189,10 +189,10 @@ jobs:
       - name: Smoke test
         run: |
           sleep 30
-          curl -sSf https://bulawngandung.vercel.app/id > /dev/null
-          curl -sSf https://bulawngandung.vercel.app/en > /dev/null
-          curl -sSf https://bulawngandung.vercel.app/zh > /dev/null
-          curl -sSf https://bulawngandung.vercel.app/ja > /dev/null
+          curl -sSf https://bulaungandung.vercel.app/id > /dev/null
+          curl -sSf https://bulaungandung.vercel.app/en > /dev/null
+          curl -sSf https://bulaungandung.vercel.app/zh > /dev/null
+          curl -sSf https://bulaungandung.vercel.app/ja > /dev/null
 
   sentry:
     name: Create Sentry Release
@@ -366,7 +366,7 @@ export const options = {
   },
 };
 
-const BASE_URL = __ENV.BASE_URL || 'https://bulawngandung.vercel.app';
+const BASE_URL = __ENV.BASE_URL || 'https://bulaungandung.vercel.app';
 const LOCALES = ['id', 'en', 'zh', 'ja'];
 const PAGES = [
   '/',
@@ -602,7 +602,7 @@ SUPABASE_SERVICE_ROLE_KEY=eyJ...    # SERVER ONLY
 # Resend (Email)
 # ==========================================================================
 RESEND_API_KEY=re_...
-RESEND_FROM_EMAIL=noreply@bulawngandung.com
+RESEND_FROM_EMAIL=noreply@bulaungandung.com
 
 # ==========================================================================
 # Vercel Analytics
@@ -615,12 +615,12 @@ NEXT_PUBLIC_VERCEL_ANALYTICS_ID=
 NEXT_PUBLIC_SENTRY_DSN=https://...@sentry.io/...
 SENTRY_AUTH_TOKEN=sntrys_...
 SENTRY_ORG=your-org
-SENTRY_PROJECT=bulawngandung
+SENTRY_PROJECT=bulaungandung
 
 # ==========================================================================
 # Contact Form
 # ==========================================================================
-CONTACT_EMAIL_TO=info@bulawngandung.com
+CONTACT_EMAIL_TO=info@bulaungandung.com
 
 # ==========================================================================
 # Rate Limiting

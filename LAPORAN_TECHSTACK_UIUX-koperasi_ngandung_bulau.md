@@ -186,7 +186,7 @@ lib/data/loader.ts
 ### 3.4 Struktur Folder
 
 ```
-bulawngandung/
+bulaungandung/
 ├── app/                          # Next.js App Router
 │   ├── layout.tsx                # Root layout — fonts + html/body
 │   ├── globals.css               # Design tokens + base styles (234 lines)

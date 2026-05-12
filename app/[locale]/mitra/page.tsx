@@ -8,7 +8,12 @@ import Link from "next/link";
 import Image from "next/image";
 import { ExternalLink } from "lucide-react";
 
-export default async function MitraPage() {
+interface PageProps {
+  params: Promise<{ locale: string }>;
+}
+
+export default async function MitraPage({ params }: PageProps) {
+  const { locale } = await params;
   const t = await getTranslations();
   const site = await getSite();
 
@@ -45,7 +50,7 @@ export default async function MitraPage() {
                   </div>
                   <div>
                     <h2 className="text-2xl font-serif font-bold text-fg tracking-tight">{m.nama}</h2>
-                    <p className="mt-3 text-fg-dim leading-relaxed">{m.deskripsi.id}</p>
+                    <p className="mt-3 text-fg-dim leading-relaxed">{m.deskripsi[locale as keyof typeof m.deskripsi]}</p>
                     <Button asChild variant="outline" size="sm" className="mt-5">
                       <Link href={m.url} target="_blank" rel="noopener noreferrer">
                         {m.url}
@@ -57,7 +62,7 @@ export default async function MitraPage() {
               </div>
             ))}
             <div className="mt-14 text-center">
-              <p className="text-lg text-fg-dim">Ingin menjadi mitra Koperasi Bulau Ngandung?</p>
+              <p className="text-lg text-fg-dim">{t("mitra.joinCta")}</p>
               <Button asChild variant="accent" className="mt-5">
                 <Link href="/kontak">{t("nav.kontak")}</Link>
               </Button>

@@ -99,12 +99,71 @@ html {
 }
 
 body {
-  background: var(--bg);
+  background-color: var(--bg);
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.025'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  background-attachment: fixed;
   color: var(--fg);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+}
+
+/* ── Body Background Variations ────────────────────
+   Terapkan salah satu class ke <body>:
+   » bg-noise   — grain halus (default)
+   » bg-mist    — gradasi kabut pagi hutan Kalimantan
+   » bg-canopy  — cahaya tembus kanopi
+   » bg-river   — aliran Sungai Kapuas
+   » bg-breathe — gradasi bernafas (animasi lambat)
+   » bg-pure    — putih solid (minimal)
+   ────────────────────────────────────────────────── */
+
+.bg-noise {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.025'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 200px 200px;
+}
+
+.bg-mist {
+  background-image:
+    linear-gradient(180deg, hsl(160 18% 96%) 0%, transparent 45%),
+    linear-gradient(180deg, transparent 55%, hsl(42 20% 96%) 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.bg-canopy {
+  background-image:
+    radial-gradient(ellipse 120% 80% at 15% 10%, hsl(42 70% 94% / 0.55) 0%, transparent 55%),
+    radial-gradient(ellipse 80% 70% at 72% 22%, hsl(160 30% 94% / 0.45) 0%, transparent 50%),
+    radial-gradient(ellipse 90% 60% at 40% 60%, hsl(42 50% 96% / 0.35) 0%, transparent 60%);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.bg-river {
+  background-image:
+    linear-gradient(100deg, transparent 30%, hsl(160 22% 95% / 0.45) 37%, hsl(160 22% 95% / 0.25) 43%, transparent 50%),
+    linear-gradient(100deg, transparent 55%, hsl(42 22% 96% / 0.35) 62%, hsl(42 22% 96% / 0.15) 68%, transparent 75%);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.bg-breathe {
+  background-image:
+    linear-gradient(180deg, hsl(160 18% 96%) 0%, var(--bg) 25%, var(--bg) 75%, hsl(42 18% 96%) 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 200%;
+  animation: breathe 14s ease-in-out infinite alternate;
+}
+
+.bg-pure {
+  background-image: none !important;
+  background-repeat: repeat;
+  background-size: auto;
 }
 
 /* ── Fluid Typography ────────────────────────────── */
@@ -179,6 +238,11 @@ p {
 @keyframes shimmer {
   0% { background-position: -200% 0; }
   100% { background-position: 200% 0; }
+}
+
+@keyframes breathe {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 0% 100%; }
 }
 
 .animate-fade-up {

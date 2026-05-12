@@ -609,7 +609,7 @@ risks:
 
   - risk: "Domain belum ada"
     likelihood: medium
-    mitigation: "Deploy ke Vercel subdomain dulu (bulawngandung.vercel.app)"
+    mitigation: "Deploy ke Vercel subdomain dulu (bulaungandung.vercel.app)"
 
   - risk: "Admin tidak familiar Sanity Studio"
     likelihood: medium

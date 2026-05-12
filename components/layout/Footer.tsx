@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { Mail, Phone, MapPin } from "lucide-react";
@@ -31,7 +32,13 @@ export function Footer() {
               className="inline-flex items-center gap-2.5 text-base font-semibold tracking-tight text-white"
               style={{ fontFamily: "var(--font-serif)" }}
             >
-              <span className="text-lg tracking-widest text-acc">B</span>
+              <Image
+                src="/logo.png"
+                alt="Bulau Ngandung"
+                width={72}
+                height={72}
+                className="h-14 w-auto brightness-0 invert"
+              />
               <span>Bulau Ngandung</span>
             </Link>
             <p className="text-sm leading-relaxed text-[hsl(240_2%_62%)]">
@@ -72,7 +79,7 @@ export function Footer() {
               </li>
               <li className="flex items-start gap-2.5">
                 <Mail className="mt-0.5 h-4 w-4 shrink-0 text-[hsl(240_2%_50%)]" />
-                <span>info@bulawngandung.org</span>
+                <span>info@bulaungandung.org</span>
               </li>
               <li className="flex items-start gap-2.5">
                 <Phone className="mt-0.5 h-4 w-4 shrink-0 text-[hsl(240_2%_50%)]" />
