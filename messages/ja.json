@@ -1,0 +1,110 @@
+{
+  "site": {
+    "title": "Koperasi Bulau Ngandung 協同組合",
+    "description": "カプアスの森から世界へ。中部カリマンタン州カプアス県の社会林業協同組合。"
+  },
+  "nav": {
+    "beranda": "ホーム",
+    "tentang": "概要",
+    "kelompok": "グループ",
+    "produk": "製品",
+    "cerita": "物語",
+    "kegiatan": "活動",
+    "mitra": "パートナー",
+    "kontak": "お問い合わせ"
+  },
+  "hero": {
+    "cta": "私たちの物語を知る"
+  },
+  "stats": {
+    "kelompok": "社会林業グループ",
+    "hektar": "総面積",
+    "produk": "非木材林産物"
+  },
+  "home": {
+    "ceritaSingkat": "私たちの物語",
+    "produkUnggulan": "おすすめ製品",
+    "testimoni": "お客様の声",
+    "mitraKami": "パートナー",
+    "newsletter": "カプアスの森からのお知らせ",
+    "ctaAkhir": "パートナーになる"
+  },
+  "tentang": {
+    "title": "Koperasi Bulau Ngandung について",
+    "artiNama": "名前の意味",
+    "sejarah": "歴史",
+    "timeline": "沿革",
+    "visi": "ビジョン",
+    "misi": "ミッション",
+    "pengurus": "運営メンバー"
+  },
+  "kelompok": {
+    "title": "25の社会林業グループ",
+    "filterDesa": "村で絞り込む",
+    "filterHhbk": "非木材林産物で絞り込む",
+    "luasAreal": "総面積",
+    "tipeIzin": "許可証タイプ",
+    "produkTerkait": "関連製品"
+  },
+  "produk": {
+    "title": "非木材林産物カタログ",
+    "filterJenis": "非木材林産物タイプで絞り込む",
+    "hargaKisaran": "価格帯",
+    "asalKelompok": "生産グループ",
+    "ceritaProduk": "製品の背景にある物語",
+    "kisahPengrajin": "職人の物語"
+  },
+  "cerita": {
+    "title": "カプアスの森の物語",
+    "filterKategori": "カテゴリーで絞り込む",
+    "bacaSelengkapnya": "続きを読む",
+    "kategori": {
+      "asal-usul": "起源",
+      "anggota": "メンバー",
+      "produk": "製品",
+      "dampak": "影響",
+      "mitra": "パートナー"
+    }
+  },
+  "kegiatan": {
+    "title": "ニュース＆活動"
+  },
+  "mitra": {
+    "title": "戦略的パートナー",
+    "amal": "Yayasan Antangpatahu Mahaga Lewu 財団"
+  },
+  "kontak": {
+    "title": "お問い合わせ",
+    "nama": "お名前",
+    "email": "メールアドレス",
+    "subjek": "件名",
+    "pesan": "メッセージ",
+    "kirim": "送信",
+    "alamat": "住所",
+    "whatsapp": "WhatsApp",
+    "jamOperasional": "営業時間"
+  },
+  "newsletter": {
+    "placeholder": "メールアドレスを入力",
+    "subscribe": "購読",
+    "success": "ありがとうございます！購読が完了しました。",
+    "error": "購読に失敗しました。もう一度お試しください。"
+  },
+  "footer": {
+    "tagline": "カプアスの森から世界へ",
+    "hakCipta": "Koperasi Bulau Ngandung。全著作権所有。"
+  },
+  "language": {
+    "label": "言語"
+  },
+  "notFound": {
+    "title": "ページが見つかりません",
+    "description": "お探しのページは見つかりませんでした。",
+    "back": "ホームに戻る"
+  },
+  "error": {
+    "title": "エラーが発生しました",
+    "description": "エラーが発生しました。もう一度お試しください。",
+    "back": "ホームに戻る"
+  }
+}

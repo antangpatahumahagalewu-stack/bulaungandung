@@ -1,0 +1,110 @@
+{
+  "site": {
+    "title": "Koperasi Bulau Ngandung",
+    "description": "From the Kapuas Forest, to the World. Social Forestry Cooperative in Kapuas Regency, Central Kalimantan."
+  },
+  "nav": {
+    "beranda": "Home",
+    "tentang": "About",
+    "kelompok": "Groups",
+    "produk": "Products",
+    "cerita": "Stories",
+    "kegiatan": "Activities",
+    "mitra": "Partners",
+    "kontak": "Contact"
+  },
+  "hero": {
+    "cta": "Discover Our Stories"
+  },
+  "stats": {
+    "kelompok": "Social Forestry Groups",
+    "hektar": "Total Area",
+    "produk": "NTFP Products"
+  },
+  "home": {
+    "ceritaSingkat": "Our Story",
+    "produkUnggulan": "Featured Products",
+    "testimoni": "Testimonials",
+    "mitraKami": "Our Partners",
+    "newsletter": "Get News from the Kapuas Forest",
+    "ctaAkhir": "Partner With Us"
+  },
+  "tentang": {
+    "title": "About Koperasi Bulau Ngandung",
+    "artiNama": "Meaning of the Name",
+    "sejarah": "History",
+    "timeline": "Timeline",
+    "visi": "Vision",
+    "misi": "Mission",
+    "pengurus": "Leadership"
+  },
+  "kelompok": {
+    "title": "25 Social Forestry Groups",
+    "filterDesa": "Filter by Village",
+    "filterHhbk": "Filter by NTFP",
+    "luasAreal": "Total Area",
+    "tipeIzin": "License Type",
+    "produkTerkait": "Related Products"
+  },
+  "produk": {
+    "title": "Non-Timber Forest Product Catalog",
+    "filterJenis": "Filter by NTFP Type",
+    "hargaKisaran": "Price Range",
+    "asalKelompok": "Origin Group",
+    "ceritaProduk": "The Story Behind the Product",
+    "kisahPengrajin": "The Artisan's Story"
+  },
+  "cerita": {
+    "title": "Stories from Kapuas Forest",
+    "filterKategori": "Filter by Category",
+    "bacaSelengkapnya": "Read More",
+    "kategori": {
+      "asal-usul": "Origins",
+      "anggota": "Members",
+      "produk": "Products",
+      "dampak": "Impact",
+      "mitra": "Partners"
+    }
+  },
+  "kegiatan": {
+    "title": "News & Activities"
+  },
+  "mitra": {
+    "title": "Strategic Partners",
+    "amal": "Yayasan Antangpatahu Mahaga Lewu"
+  },
+  "kontak": {
+    "title": "Contact Us",
+    "nama": "Name",
+    "email": "Email",
+    "subjek": "Subject",
+    "pesan": "Message",
+    "kirim": "Send Message",
+    "alamat": "Address",
+    "whatsapp": "WhatsApp",
+    "jamOperasional": "Operating Hours"
+  },
+  "newsletter": {
+    "placeholder": "Enter your email",
+    "subscribe": "Subscribe",
+    "success": "Thank you! You are now subscribed.",
+    "error": "Failed to subscribe. Please try again."
+  },
+  "footer": {
+    "tagline": "From the Kapuas Forest, to the World",
+    "hakCipta": "Koperasi Bulau Ngandung. All rights reserved."
+  },
+  "language": {
+    "label": "Language"
+  },
+  "notFound": {
+    "title": "Page Not Found",
+    "description": "Sorry, the page you are looking for could not be found.",
+    "back": "Back to Home"
+  },
+  "error": {
+    "title": "Something Went Wrong",
+    "description": "Sorry, an error occurred. Please try again.",
+    "back": "Back to Home"
+  }
+}

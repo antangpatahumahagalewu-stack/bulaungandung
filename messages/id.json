@@ -1,0 +1,110 @@
+{
+  "site": {
+    "title": "Koperasi Bulau Ngandung",
+    "description": "Dari Hutan Kapuas, untuk Dunia. Koperasi Perhutanan Sosial di Kabupaten Kapuas, Kalimantan Tengah."
+  },
+  "nav": {
+    "beranda": "Beranda",
+    "tentang": "Tentang",
+    "kelompok": "Kelompok",
+    "produk": "Produk",
+    "cerita": "Cerita",
+    "kegiatan": "Kegiatan",
+    "mitra": "Mitra",
+    "kontak": "Kontak"
+  },
+  "hero": {
+    "cta": "Kenali Cerita Kami"
+  },
+  "stats": {
+    "kelompok": "Kelompok PS",
+    "hektar": "Total Luas Areal",
+    "produk": "Produk HHBK"
+  },
+  "home": {
+    "ceritaSingkat": "Cerita Singkat",
+    "produkUnggulan": "Produk Unggulan",
+    "testimoni": "Testimoni",
+    "mitraKami": "Mitra Kami",
+    "newsletter": "Dapatkan Kabar dari Hutan Kapuas",
+    "ctaAkhir": "Mari Bermitra dengan Kami"
+  },
+  "tentang": {
+    "title": "Tentang Koperasi Bulau Ngandung",
+    "artiNama": "Arti Nama",
+    "sejarah": "Sejarah",
+    "timeline": "Perjalanan",
+    "visi": "Visi",
+    "misi": "Misi",
+    "pengurus": "Pengurus"
+  },
+  "kelompok": {
+    "title": "25 Kelompok Perhutanan Sosial",
+    "filterDesa": "Filter Desa",
+    "filterHhbk": "Filter HHBK",
+    "luasAreal": "Luas Areal",
+    "tipeIzin": "Tipe Izin",
+    "produkTerkait": "Produk Terkait"
+  },
+  "produk": {
+    "title": "Katalog Hasil Hutan Bukan Kayu",
+    "filterJenis": "Filter Jenis HHBK",
+    "hargaKisaran": "Kisaran Harga",
+    "asalKelompok": "Asal Kelompok",
+    "ceritaProduk": "Cerita di Balik Produk",
+    "kisahPengrajin": "Kisah Pengrajin"
+  },
+  "cerita": {
+    "title": "Cerita dari Hutan Kapuas",
+    "filterKategori": "Filter Kategori",
+    "bacaSelengkapnya": "Baca Selengkapnya",
+    "kategori": {
+      "asal-usul": "Asal-usul",
+      "anggota": "Anggota",
+      "produk": "Produk",
+      "dampak": "Dampak",
+      "mitra": "Mitra"
+    }
+  },
+  "kegiatan": {
+    "title": "Berita & Kegiatan"
+  },
+  "mitra": {
+    "title": "Mitra Strategis",
+    "amal": "Yayasan Antangpatahu Mahaga Lewu"
+  },
+  "kontak": {
+    "title": "Hubungi Kami",
+    "nama": "Nama",
+    "email": "Email",
+    "subjek": "Subjek",
+    "pesan": "Pesan",
+    "kirim": "Kirim Pesan",
+    "alamat": "Alamat",
+    "whatsapp": "WhatsApp",
+    "jamOperasional": "Jam Operasional"
+  },
+  "newsletter": {
+    "placeholder": "Masukkan email Anda",
+    "subscribe": "Berlangganan",
+    "success": "Terima kasih! Anda telah berlangganan.",
+    "error": "Gagal berlangganan. Silakan coba lagi."
+  },
+  "footer": {
+    "tagline": "Dari Hutan Kapuas, untuk Dunia",
+    "hakCipta": "Koperasi Bulau Ngandung. Hak cipta dilindungi."
+  },
+  "language": {
+    "label": "Bahasa"
+  },
+  "notFound": {
+    "title": "Halaman Tidak Ditemukan",
+    "description": "Maaf, halaman yang Anda cari tidak ditemukan.",
+    "back": "Kembali ke Beranda"
+  },
+  "error": {
+    "title": "Terjadi Kesalahan",
+    "description": "Maaf, terjadi kesalahan. Silakan coba lagi.",
+    "back": "Kembali ke Beranda"
+  }
+}

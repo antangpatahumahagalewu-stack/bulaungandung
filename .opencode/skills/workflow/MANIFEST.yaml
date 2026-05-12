@@ -1,0 +1,835 @@
+# MANIFEST: Workflow Configuration
+# PRD-to-Production Pipeline Orchestrator
+
+metadata:
+  version: "1.0.0"
+  codename: "pipeline"
+  autonomy: full
+  compatibility: opencode>=1.0.0
+
+# ==========================================================================
+# 1. AGENT REGISTRY (for orchestrator integration)
+# ==========================================================================
+agent:
+  id: "pw"
+  name: "PipelineWorkflow"
+  type: "meta-orchestrator"
+  priority: 11  # Highest — takes control when PRD.md detected
+  activation: "on_prd_detected"
+  capabilities:
+    - prd_parsing
+    - issue_generation
+    - chain_execution
+    - content_generation
+    - design_critique
+    - delegate_to_skills
+    - track_definition_of_done
+    - milestone_reporting
+  permissions:
+    - read_all_files
+    - write_project_files
+    - delegate_to_agents
+    - modify_shared_state
+    - escalate_to_user
+  integrations:
+    delegates_to:
+      - agent: apw
+        skill: apple-parallax-web
+        for: [design_ui, components, pages, animations]
+      - agent: so
+        skill: seo-optimizer
+        for: [seo, structured_data, meta_tags, sitemap]
+      - agent: bc
+        orchestrator: BugChecker
+        for: [quality_scan, lint, security, accessibility]
+      - agent: ud
+        orchestrator: Understanding
+        for: [architecture_validation, gap_analysis]
+      - agent: aw
+        orchestrator: Awareness
+        for: [file_tracking, conflict_detection, progress_monitoring]
+      - agent: ap
+        orchestrator: Adaptation
+        for: [strategy_fallback, error_recovery]
+
+# ==========================================================================
+# 2. PRD PARSER CONFIGURATION
+# ==========================================================================
+prd_parser:
+  source_file: "PRD.md"
+  extraction_rules:
+    tech_stack: "§5.1"
+    dependencies: "§5.2"
+    sitemap: "§3.1"
+    pages: "§3.2"
+    storytelling: "§4"
+    sanity_schemas: "§5.4"
+    i18n_config: "§5.5"
+    rendering_strategy: "§5.6"
+    design_tokens: "§6"
+    security: "§7"
+    newsletter: "§8"
+    seo: "§9"
+    analytics: "§10"
+    non_functional: "§11"
+    folder_structure: "§12"
+    milestones: "§13"
+    risks: "§14"
+    definition_of_done: "§15"
+
+  output_files:
+    context_json: ".workflow/context.json"
+    todos_json: ".workflow/todos.json"
+    issues_dir: ".workflow/issues/"
+
+# ==========================================================================
+# 3. PHASE CONFIGURATION (19 Phases)
+# ==========================================================================
+phases:
+  "-2":
+    name: "PRD Analysis & Enrichment"
+    issues: ["WI-001", "WI-005"]
+    gate: prd_scorecard
+    min_duration_min: 5
+    max_duration_min: 15
+
+  "-1":
+    name: "Local Issue Generation"
+    issues: ["WI-006", "WI-010"]
+    gate: issue_count_validation
+    min_issues_generated: 80
+    max_issues_generated: 220
+    issue_template: "ISSUE_SPEC.md"
+
+  "0":
+    name: "Architecture & Strategy"
+    issues: ["WI-011", "WI-020"]
+    gate: architecture_decision_records
+    required_adrs: 8
+
+  "1":
+    name: "Foundation & Developer Experience"
+    issues: ["WI-021", "WI-030"]
+    gate: dev_server_running
+    required_command: "npm run dev"
+    required_files:
+      - "package.json"
+      - "next.config.ts"
+      - "tailwind.config.ts"
+      - "i18n.config.ts"
+      - "middleware.ts"
+
+  "2":
+    name: "Design System Factory"
+    issues: ["WI-031", "WI-050"]
+    gate: design_system_complete
+    required_files:
+      - "components/ui/*.tsx"  # 15 components
+    required_tokens:
+      - "--primary"
+      - "--secondary"
+      - "--accent"
+      - "--background"
+      - "--foreground"
+
+  "3":
+    name: "Content Architecture & AI Generation"
+    issues: ["WI-051", "WI-065"]
+    gate: content_generated
+    required_content:
+      member_profiles: 25
+      product_stories: 15
+      storytelling_narratives: 8
+      locales: ["id", "en", "zh", "ja"]
+
+  "4":
+    name: "Layout & Navigation"
+    issues: ["WI-066", "WI-075"]
+    gate: layout_renders
+    required_files:
+      - "components/layout/Navbar.tsx"
+      - "components/layout/Footer.tsx"
+      - "components/layout/LanguageSwitcher.tsx"
+
+  "5":
+    name: "Component Library"
+    issues: ["WI-076", "WI-100"]
+    gate: all_components_built
+    required_components: 15
+
+  "6":
+    name: "Pages"
+    issues: ["WI-101", "WI-115"]
+    gate: all_pages_accessible
+    required_pages: 13
+
+  "7":
+    name: "Forms & Integrations"
+    issues: ["WI-116", "WI-125"]
+    gate: forms_functional
+    required_apis:
+      - "/api/newsletter"
+      - "/api/contact"
+      - "/api/revalidate"
+
+  "8":
+    name: "Content Strategy Layer"
+    issues: ["WI-126", "WI-135"]
+    gate: content_strategy_ready
+
+  "9":
+    name: "Quality Engineering"
+    issues: ["WI-136", "WI-145"]
+    gate: quality_passing
+    min_test_coverage: 80
+    min_typescript_coverage: 95
+
+  "10":
+    name: "Performance Engineering"
+    issues: ["WI-146", "WI-155"]
+    gate: performance_budget_met
+    thresholds:
+      lcp_ms: 2500
+      cls: 0.1
+      inp_ms: 200
+
+  "11":
+    name: "SEO Engineering"
+    issues: ["WI-156", "WI-165"]
+    gate: seo_audit_pass
+    delegate_to: "seo-optimizer"
+    min_lighthouse_seo: 90
+
+  "12":
+    name: "Security Engineering"
+    issues: ["WI-166", "WI-172"]
+    gate: security_headers_active
+    required_headers:
+      - "Content-Security-Policy"
+      - "X-Frame-Options"
+      - "X-Content-Type-Options"
+
+  "13":
+    name: "Platform Engineering"
+    issues: ["WI-173", "WI-182"]
+    gate: infrastructure_ready
+    required_files:
+      - "Dockerfile"
+      - "k6/load-test.js"
+      - "vercel.json"
+
+  "14":
+    name: "CI/CD & DevOps"
+    issues: ["WI-183", "WI-192"]
+    gate: ci_pipeline_green
+    required_files:
+      - ".github/workflows/ci.yml"
+      - ".github/workflows/preview.yml"
+      - ".github/workflows/production.yml"
+
+  "15":
+    name: "Observability"
+    issues: ["WI-193", "WI-200"]
+    gate: monitoring_configured
+
+  "16":
+    name: "Documentation"
+    issues: ["WI-201", "WI-210"]
+    gate: docs_complete
+    required_docs:
+      - "ARCHITECTURE.md"
+      - "DEPLOYMENT.md"
+      - "COMPONENTS.md"
+
+  "17":
+    name: "Launch & Handover"
+    issues: ["WI-211", "WI-220"]
+    gate: launch_checklist_complete
+    required_checklist_items: 50
+
+# ==========================================================================
+# 4. QUALITY GATE THRESHOLDS
+# ==========================================================================
+gates:
+  default:
+    lint:
+      command: "npx eslint . --max-warnings 0"
+      expected: "0 errors, 0 warnings"
+      auto_fix: true
+
+    typecheck:
+      command: "npx tsc --noEmit"
+      expected: "0 errors"
+      auto_fix: false
+
+    format:
+      command: "npx prettier --check ."
+      expected: "0 issues"
+      auto_fix: true
+
+    build:
+      command: "npm run build"
+      expected: "Success"
+      auto_fix: false
+
+    test:
+      command: "npx vitest run"
+      expected: "All pass"
+      auto_fix: false
+      min_coverage: 80
+
+    accessibility:
+      command: "npx @axe-core/cli http://localhost:3000"
+      expected: "0 violations"
+      auto_fix: false
+
+    performance:
+      tool: "Lighthouse"
+      thresholds:
+        performance: 90
+        accessibility: 95
+        best_practices: 90
+        seo: 90
+
+    bundle_size:
+      command: "npx next-bundle-analyzer"
+      max_first_load_js_kb: 200
+      max_first_load_css_kb: 50
+
+  design_sense:
+    min_pass: 5          # Minimum 5 of 7 sensibilities must PASS
+    mandatory_pass: 6    # Sense #6 (Kesadaran Konteks) is MANDATORY
+    max_revise: 2        # Maximum 2 REVISE allowed per issue
+    auto_revise_loop: 3  # Max auto-revision cycles before escalation
+
+  chain:
+    max_retry_per_issue: 3
+    max_breaks_per_phase: 2
+    max_parallel_issues: 3
+    stall_timeout_min: 10
+
+# ==========================================================================
+# 5. DESIGN TOKEN MAPPING
+# ==========================================================================
+design_tokens:
+  colors:
+    primary:    { hex: "#2D6A4F", hsl: "160 43% 28%", name: "forest-depth" }
+    secondary:  { hex: "#8B6F47", hsl: "35 25% 42%", name: "earth-anchor" }
+    accent:     { hex: "#D4A373", hsl: "30 48% 64%", name: "honey-glow" }
+    background: { hex: "#FAF9F6", hsl: "40 33% 98%", name: "morning-mist" }
+    foreground: { hex: "#1B4332", hsl: "160 30% 15%", name: "forest-depth-dark" }
+    muted:      { hex: "#6B7280", hsl: "220 14% 54%", name: "silence-weight" }
+    border:     { hex: "#E5E7EB", hsl: "220 13% 91%", name: "visual-whisper" }
+
+  typography:
+    font_family: "Inter, Geist, sans-serif"
+    scale:
+      hero:    "clamp(2.5rem, 5vw, 4.5rem)"
+      h2:      "clamp(2rem, 4vw, 2.5rem)"
+      h3:      "clamp(1.25rem, 2vw, 1.5rem)"
+      body:    "clamp(1rem, 1.5vw, 1.125rem)"
+      caption: "clamp(0.75rem, 1vw, 0.875rem)"
+
+  spacing:
+    grid: 4    # 4px base grid
+    scale: [4, 8, 12, 16, 20, 24, 32, 40, 48, 64, 80, 96, 128]
+
+  animation:
+    default_duration: 0.6
+    default_easing: "power3.out"
+    reduced_motion: true   # Always respect prefers-reduced-motion
+
+# ==========================================================================
+# 6. DEPENDENCY REGISTRY (33 packages)
+# ==========================================================================
+dependencies:
+  production:
+    - name: next
+      version: "15.x"
+      purpose: "Framework fullstack"
+    - name: react
+      version: "19.x"
+      purpose: "UI library"
+    - name: typescript
+      version: "5.x"
+      purpose: "Type system"
+    - name: next-sanity
+      version: latest
+      purpose: "Sanity + Next.js integration"
+    - name: "@sanity/client"
+      version: latest
+      purpose: "Sanity API client"
+    - name: "@sanity/image-url"
+      version: latest
+      purpose: "Optimized image URL generation"
+    - name: "@sanity/vision"
+      version: latest
+      purpose: "GROQ query playground"
+    - name: "@portabletext/react"
+      version: latest
+      purpose: "Safe rich text rendering"
+    - name: next-intl
+      version: latest
+      purpose: "Internationalization (4 locale)"
+    - name: tailwindcss
+      version: "4.x"
+      purpose: "Utility CSS"
+    - name: "@tailwindcss/postcss"
+      version: latest
+      purpose: "PostCSS integration"
+    - name: tailwind-merge
+      version: latest
+      purpose: "Class utilities"
+    - name: clsx
+      version: latest
+      purpose: "Class utilities"
+    - name: class-variance-authority
+      version: latest
+      purpose: "Variant components"
+    - name: tailwindcss-animate
+      version: latest
+      purpose: "CSS animations"
+    - name: lucide-react
+      version: latest
+      purpose: "Icon set"
+    - name: "@radix-ui/react-slot"
+      version: latest
+      purpose: "Button asChild"
+    - name: "@radix-ui/react-dialog"
+      version: latest
+      purpose: "Sheet (mobile nav)"
+    - name: "@radix-ui/react-navigation-menu"
+      version: latest
+      purpose: "Desktop nav"
+    - name: "@radix-ui/react-dropdown-menu"
+      version: latest
+      purpose: "Language switcher"
+    - name: "@radix-ui/react-separator"
+      version: latest
+      purpose: "Section divider"
+    - name: "@radix-ui/react-avatar"
+      version: latest
+      purpose: "Member photos"
+    - name: "@radix-ui/react-aspect-ratio"
+      version: latest
+      purpose: "Consistent image containers"
+    - name: zod
+      version: latest
+      purpose: "Schema validation"
+    - name: react-hook-form
+      version: latest
+      purpose: "Form state management"
+    - name: "@hookform/resolvers"
+      version: latest
+      purpose: "Form resolvers"
+    - name: resend
+      version: latest
+      purpose: "Email delivery (newsletter)"
+    - name: "@supabase/supabase-js"
+      version: latest
+      purpose: "Subscriber data store"
+    - name: "@vercel/analytics"
+      version: latest
+      purpose: "Page views + Web Vitals"
+    - name: "@sentry/nextjs"
+      version: latest
+      purpose: "Error monitoring"
+    - name: gsap
+      version: "3.12.5"
+      purpose: "Animation"
+
+  dev:
+    - name: eslint
+      version: latest
+      purpose: "Linting"
+    - name: "eslint-config-next"
+      version: latest
+      purpose: "Next.js lint rules"
+    - name: prettier
+      version: latest
+      purpose: "Code formatting"
+    - name: postcss
+      version: latest
+      purpose: "CSS processing"
+    - name: vitest
+      version: latest
+      purpose: "Unit + integration testing"
+    - name: "@types/node"
+      version: latest
+      purpose: "Node.js types"
+    - name: "@types/react"
+      version: latest
+      purpose: "React types"
+
+# ==========================================================================
+# 7. SANITY SCHEMA MAP (from PRD §5.4)
+# ==========================================================================
+sanity_schemas:
+  - name: member
+    description: "25 Kelompok Perhutanan Sosial"
+    file: "sanity/schema/member.ts"
+    locale_fields: [deskripsi]
+
+  - name: product
+    description: "Katalog HHBK"
+    file: "sanity/schema/product.ts"
+    locale_fields: [deskripsi, cerita, kutipan]
+
+  - name: story
+    description: "Cerita Storytelling"
+    file: "sanity/schema/story.ts"
+    locale_fields: [judul, narasi, kutipan]
+
+  - name: activity
+    description: "Berita & Kegiatan"
+    file: "sanity/schema/activity.ts"
+    locale_fields: [judul, konten]
+
+  - name: siteSettings
+    description: "Singleton — Pengaturan Website"
+    file: "sanity/schema/siteSettings.ts"
+    locale_fields: [heroTitle, heroSubtitle, aboutContent, visi, misi]
+
+# ==========================================================================
+# 8. ROUTE MAP (from PRD §3.1)
+# ==========================================================================
+routes:
+  - path: "/[locale]"
+    page: "Beranda"
+    rendering: "ISR"
+    revalidation: 60
+    file: "app/[locale]/page.tsx"
+
+  - path: "/[locale]/tentang"
+    page: "Tentang"
+    rendering: "ISR"
+    revalidation: 60
+
+  - path: "/[locale]/kelompok"
+    page: "Daftar Kelompok"
+    rendering: "ISR"
+    revalidation: 60
+
+  - path: "/[locale]/kelompok/[slug]"
+    page: "Detail Kelompok"
+    rendering: "SSG"
+    revalidation: "on-demand"
+
+  - path: "/[locale]/produk"
+    page: "Katalog Produk"
+    rendering: "ISR"
+    revalidation: 60
+
+  - path: "/[locale]/produk/[slug]"
+    page: "Detail Produk"
+    rendering: "SSG"
+    revalidation: "on-demand"
+
+  - path: "/[locale]/cerita"
+    page: "Semua Cerita"
+    rendering: "ISR"
+    revalidation: 60
+
+  - path: "/[locale]/cerita/[slug]"
+    page: "Detail Cerita"
+    rendering: "SSG"
+    revalidation: "on-demand"
+
+  - path: "/[locale]/kegiatan"
+    page: "Berita & Kegiatan"
+    rendering: "ISR"
+    revalidation: 60
+
+  - path: "/[locale]/kegiatan/[slug]"
+    page: "Detail Kegiatan"
+    rendering: "SSG"
+    revalidation: "on-demand"
+
+  - path: "/[locale]/mitra"
+    page: "Mitra Strategis"
+    rendering: "ISR"
+    revalidation: 60
+
+  - path: "/[locale]/kontak"
+    page: "Form Kontak"
+    rendering: "Static"
+    revalidation: null
+
+  - path: "/studio/[[...index]]"
+    page: "Sanity Studio"
+    rendering: "CSR"
+    revalidation: null
+
+# ==========================================================================
+# 9. DEFINITION OF DONE CHECKLIST (from PRD §15)
+# ==========================================================================
+definition_of_done:
+  fungsional:
+    - "Semua 13 halaman publik render dengan benar di 4 locale"
+    - "Sanity Studio bisa login & CRUD semua content type"
+    - "Revalidasi ISR jalan via Sanity webhook"
+    - "Form kontak terkirim ke email koperasi"
+    - "Newsletter subscribe → simpan di Supabase + kirim welcome email via Resend"
+
+  storytelling:
+    - "Setiap produk punya cerita asal minimal 2 paragraf"
+    - "Setiap kelompok punya narasi profil minimal 3 paragraf"
+    - "Minimal 3 spotlight cerita anggota"
+    - "Halaman Tentang pakai narasi + timeline, bukan bullet point"
+    - "Hero homepage punya hook emosional"
+    - "Minimal 1 kutipan/testimoni"
+    - "Foto di website menampilkan manusia + konteks"
+
+  teknis:
+    - "Lighthouse score ≥ 90 di 4 kategori"
+    - "Mobile responsive (semua halaman)"
+    - "CSP header aktif"
+    - "Vercel Analytics tracking"
+    - "Metadata SEO + sitemap + robots.txt + structured data"
+    - "Language switcher berfungsi di semua halaman"
+    - "Deploy di Vercel"
+
+  keamanan:
+    - "Semua rich text dirender via @portabletext/react (no XSS)"
+    - "Semua input form divalidasi Zod"
+    - "Sanity token publik hanya read-only"
+    - "Rate limiting di form kontak & newsletter"
+
+# ==========================================================================
+# 10. RISK REGISTRY (from PRD §14)
+# ==========================================================================
+risks:
+  - risk: "Data 25 kelompok belum tersedia"
+    likelihood: high
+    mitigation: "Gunakan AI-generated data realistis (GENERATORS.md)"
+
+  - risk: "Logo & foto real kosong"
+    likelihood: high
+    mitigation: "Placeholder dengan deskripsi tekstual detail untuk DALL-E/Midjourney"
+
+  - risk: "Domain belum ada"
+    likelihood: medium
+    mitigation: "Deploy ke Vercel subdomain dulu (bulawngandung.vercel.app)"
+
+  - risk: "Admin tidak familiar Sanity Studio"
+    likelihood: medium
+    mitigation: "Generate panduan admin sederhana dalam documentation"
+
+  - risk: "Konten multilingual kosong"
+    likelihood: medium
+    mitigation: "Isi ID dulu, locale lain generate dengan AI translation"
+
+  - risk: "Vercel Hobby tier limit"
+    likelihood: low
+    mitigation: "Monitor bandwidth usage"
+
+# ==========================================================================
+# 11. AUTOPILOT CONFIGURATION
+# ==========================================================================
+autopilot:
+  enabled: true
+  silent_mode: true
+  max_phases_auto: 19
+  checkpoint_interval_min: 10
+  max_phase_duration_min: 60
+
+  auto_actions:
+    - prd_parse
+    - issue_generate
+    - content_generate
+    - code_generate
+    - test_generate
+    - doc_generate
+    - self_heal
+
+  forbidden:
+    - git_push
+    - git_force_push
+    - env_modify
+    - credential_access
+    - external_api_call
+
+  escalation:
+    max_auto_retries: 3
+    final_escalation: user
+
+# ==========================================================================
+# 12. WORKFLOW DIRECTORY STRUCTURE
+# ==========================================================================
+workflow_dirs:
+  root: ".workflow/"
+  issues: ".workflow/issues/"
+  logs: ".workflow/logs/"
+  experience: ".workflow/experience/"
+  archive: ".workflow/logs/archive/"
+
+  naming:
+    issues: "fase-{XX}-{nama-fase}/WI-{XXX}-{slug-deskriptif}.md"
+    logs_archive: "{YYYY-MM-DD}-{HHMM}-{nama}.log.gz"
+
+  isolation:
+    rule: "ALL workflow artifacts in .workflow/. NONE in project root."
+    gitignore: ".workflow/"
+
+# ==========================================================================
+# 13. LOGGING CONFIGURATION
+# ==========================================================================
+logging:
+  enabled: true
+  principle: "NO LOG = NO ACTION"
+  format: "JSONL"
+  directory: ".workflow/logs/"
+
+  log_files:
+    pipeline:
+      file: "pipeline.log"
+      events: [phase_start, phase_complete, phase_fail, gate_check]
+      estimated_entries_per_run: 60
+
+    chain:
+      file: "chain.log"
+      events: [issue_start, step, file_create, file_edit, dep_install, gate_run, issue_complete, issue_blocked]
+      estimated_entries_per_run: 2500
+
+    errors:
+      file: "errors.log"
+      events: [error_detect, auto_fix_start, retry, retry_success, retry_fail, escalate]
+      estimated_entries_per_run: 15
+
+    delegation:
+      file: "delegation.log"
+      events: [agent_invoke, agent_start, agent_done, agent_fail]
+      estimated_entries_per_run: 200
+
+    design_critique:
+      file: "design-critique.log"
+      events: [sense_evaluate, ritual_step]
+      estimated_entries_per_run: 315
+
+    performance:
+      file: "performance.log"
+      events: [step_duration, gate_duration, issue_duration, phase_duration]
+      estimated_entries_per_run: 3000
+
+  summary:
+    file: "summary.md"
+    format: "Markdown"
+    generate_after: [phase_complete, pipeline_complete]
+    sections:
+      - overall_stats
+      - phase_timeline
+      - error_log
+      - design_critique_highlights
+      - delegation_summary
+
+  levels:
+    DEBUG:
+      description: "Step detail — file created, dep installed, line count, ritual step"
+      log_to: [chain, performance]
+    INFO:
+      description: "Normal event — phase/issue start/done, gate pass, delegation"
+      log_to: [pipeline, chain, delegation, design_critique]
+    WARN:
+      description: "Non-blocking — design revise, perf near threshold, chain blocked"
+      log_to: [chain, design_critique, errors]
+    ERROR:
+      description: "Failure — gate fail, bug, chain break, escalation"
+      log_to: [errors, chain]
+
+  retention:
+    max_archive_runs: 10
+    compression: "gzip"
+    auto_cleanup: true
+
+  privacy:
+    forbidden_in_log:
+      - api_keys
+      - tokens
+      - secrets
+      - user_data
+      - credentials
+      - absolute_local_paths
+
+# ==========================================================================
+# 14. EXPERIENCE LEARNING CONFIGURATION
+# ==========================================================================
+experience:
+  enabled: true
+  principle: "Every run teaches. Every log is a lesson."
+  directory: ".workflow/experience/"
+
+  files:
+    patterns_learned:
+      file: "patterns-learned.json"
+      stores: [{pattern, domain, success_rate, insight, runs_validated}]
+    timing_benchmarks:
+      file: "timing-benchmarks.json"
+      stores: [{phase, estimated_min, actual_avg_min, variance, bottleneck, insight}]
+    error_taxonomy:
+      file: "error-taxonomy.json"
+      stores: [{type, frequency, phases, fix_strategy_best, prevention, insight}]
+    design_preferences:
+      file: "design-preferences.json"
+      stores: [{color, typography, layout_preferences with confidence score}]
+    agent_performance:
+      file: "agent-performance.json"
+      stores: [{agent, success_rate, avg_time, best_at, weak_at, insight}]
+    improvement_metrics:
+      file: "improvement-metrics.json"
+      stores: [{run, errors, duration, design_pass_rate, auto_resolve_rate}]
+    strategy_effectiveness:
+      file: "strategy-effectiveness.json"
+      stores: [{strategy, domain, success_rate, avg_resolution_time}]
+    knowledge_graph:
+      file: "knowledge-graph.json"
+      stores: [{nodes, edges, inferences}]
+
+  learning_loop:
+    trigger: "pipeline_run_complete"
+    steps:
+      - analyze_logs
+      - extract_patterns
+      - update_benchmarks
+      - classify_errors
+      - update_preferences
+      - reevaluate_agents
+      - recalculate_metrics
+      - generate_pre_run_brief
+
+  pre_run_brief:
+    enabled: true
+    content:
+      - predicted_errors
+      - recommended_strategies
+      - optimal_delegation
+      - adjusted_estimates
+      - confidence_scores
+      - improvement_projection
+
+  improvement_targets:
+    error_reduction_per_run: "10%+"
+    time_reduction_per_run: "3%+"
+    design_quality_increase_per_run: "2%+"
+    convergence_expected_at: "run ~8"
+
+# ==========================================================================
+# 15. PROJECT CONTEXT (from PRD)
+# ==========================================================================
+project:
+  name: "Website Koperasi Perhutanan Sosial Bulau Ngandung"
+  short_name: "Bulau Ngandung"
+  type: "website_informatif_publik"
+  framework: "Next.js 15 (App Router)"
+  language: "TypeScript 5.x"
+  styling: "Tailwind CSS 4.x + shadcn/ui"
+  cms: "Sanity.io"
+  i18n: "next-intl (id, en, zh, ja)"
+  deployment: "Vercel"
+  total_pages: 14  # 13 public + 1 CMS admin
+  total_locales: 4
+  total_components: 15  # custom
+  total_dependencies: 33
+
+---
+
+*This manifest encodes the entire pipeline — from PRD parsing to production launch. Modify thresholds to tune behavior. Remove, never add, to preserve precision.*

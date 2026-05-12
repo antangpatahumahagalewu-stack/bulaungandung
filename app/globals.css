@@ -1,0 +1,225 @@
+@import "tailwindcss";
+
+/* ── Design Tokens ────────────────────────────────── */
+
+@theme inline {
+  --color-background: var(--bg);
+  --color-foreground: var(--fg);
+  --color-primary: var(--pri);
+  --color-primary-foreground: var(--pri-fg);
+  --color-secondary: var(--sec);
+  --color-secondary-foreground: var(--sec-fg);
+  --color-accent: var(--acc);
+  --color-accent-foreground: var(--acc-fg);
+  --color-muted: var(--mu);
+  --color-muted-foreground: var(--mu-fg);
+  --color-border: var(--bdr);
+  --color-card: var(--card-bg);
+  --color-card-foreground: var(--fg);
+  --color-destructive: var(--dest);
+  --color-destructive-foreground: var(--dest-fg);
+  --color-ring: var(--pri);
+  --color-bg-alt: var(--bg-alt);
+  --color-footer: var(--footer-bg);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --font-sans: var(--font-sans), "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-serif), "Playfair Display", Georgia, serif;
+}
+
+/* ── Root: Apple-Inspired "Bening" Palette ────────── */
+
+:root {
+  /* Base — pure white body, Apple-style cool gray sections */
+  --bg: #ffffff;
+  --bg-alt: hsl(240 5% 96%);
+  --footer-bg: hsl(240 3% 13%);
+  --fg: hsl(160 15% 10%);
+  --fg-dim: hsl(160 8% 40%);
+
+  /* Primary — deep emerald, calm authority */
+  --pri: hsl(160 50% 22%);
+  --pri-fg: #ffffff;
+  --pri-subtle: hsl(160 35% 92%);
+
+  /* Accent — luminous honey gold, used sparingly */
+  --acc: hsl(42 80% 52%);
+  --acc-fg: hsl(160 50% 10%);
+  --acc-glow: hsl(42 85% 62%);
+  --acc-subtle: hsl(42 70% 94%);
+
+  /* Secondary — muted sage */
+  --sec: hsl(140 20% 60%);
+  --sec-fg: hsl(160 15% 10%);
+
+  /* Muted / Borders */
+  --mu: hsl(240 5% 93%);
+  --mu-fg: hsl(160 6% 48%);
+  --bdr: hsl(240 5% 90%);
+  --bdr-subtle: hsl(240 5% 94%);
+
+  /* Card — pure white on bg-alt sections */
+  --card-bg: #ffffff;
+
+  /* Destructive */
+  --dest: hsl(0 70% 55%);
+  --dest-fg: #ffffff;
+
+  /* Glass — Apple-style subtle blur */
+  --glass-bg: hsla(0, 0%, 100%, 0.72);
+  --glass-border: hsl(240 5% 90% / 0.6);
+  --glass-blur: 16px;
+
+  /* Elevation — subtle, purposeful */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04), 0 4px 12px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.06), 0 12px 32px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.08), 0 24px 64px rgba(0, 0, 0, 0.04);
+
+  /* Radius */
+  --radius: 0.75rem;
+
+  /* Fluid spacing */
+  --space-section: clamp(3rem, 6vw, 6rem);
+  --space-gap: clamp(1rem, 2vw, 2rem);
+}
+
+/* ── Reset & Base ────────────────────────────────── */
+
+*,
+*::before,
+*::after {
+  border-color: var(--bdr);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* ── Fluid Typography ────────────────────────────── */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); }
+h2 { font-size: clamp(2rem, 4vw, 3.25rem); }
+h3 { font-size: clamp(1.5rem, 3vw, 2.25rem); }
+h4 { font-size: clamp(1.25rem, 2vw, 1.75rem); }
+
+p {
+  color: var(--fg-dim);
+  line-height: 1.7;
+}
+
+/* ── Utility Layers ──────────────────────────────── */
+
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+}
+
+.bg-alt {
+  background: var(--bg-alt);
+}
+
+/* ── Accent utility (gold) ──────────────────────── */
+
+.accent-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--acc);
+  box-shadow: 0 0 12px var(--acc-glow);
+}
+
+.accent-line {
+  width: 48px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--acc);
+  box-shadow: 0 0 8px var(--acc-glow);
+}
+
+/* ── Animation Keyframes ────────────────────────── */
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.7s ease-out both;
+}
+
+/* ── Reduced Motion ─────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* ── Scrollbar ──────────────────────────────────── */
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bdr);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--mu-fg);
+}
+
+/* ── Selection ──────────────────────────────────── */
+
+::selection {
+  background: hsl(42 80% 52% / 0.25);
+  color: var(--fg);
+}

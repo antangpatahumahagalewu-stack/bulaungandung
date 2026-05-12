@@ -1,0 +1,110 @@
+{
+  "site": {
+    "title": "Koperasi Bulau Ngandung 合作社",
+    "description": "从卡普阿斯森林，走向世界。位于中加里曼丹省卡普阿斯县的社会林业合作社。"
+  },
+  "nav": {
+    "beranda": "首页",
+    "tentang": "关于我们",
+    "kelompok": "小组",
+    "produk": "产品",
+    "cerita": "故事",
+    "kegiatan": "活动",
+    "mitra": "合作伙伴",
+    "kontak": "联系我们"
+  },
+  "hero": {
+    "cta": "了解我们的故事"
+  },
+  "stats": {
+    "kelompok": "社会林业小组",
+    "hektar": "总面积",
+    "produk": "非木材林产品"
+  },
+  "home": {
+    "ceritaSingkat": "我们的故事",
+    "produkUnggulan": "精选产品",
+    "testimoni": "推荐语",
+    "mitraKami": "我们的合作伙伴",
+    "newsletter": "获取卡普阿斯森林的最新消息",
+    "ctaAkhir": "与我们合作"
+  },
+  "tentang": {
+    "title": "关于 Koperasi Bulau Ngandung",
+    "artiNama": "名字的含义",
+    "sejarah": "历史",
+    "timeline": "发展历程",
+    "visi": "愿景",
+    "misi": "使命",
+    "pengurus": "领导团队"
+  },
+  "kelompok": {
+    "title": "25个社会林业小组",
+    "filterDesa": "按村庄筛选",
+    "filterHhbk": "按非木材林产品筛选",
+    "luasAreal": "总面积",
+    "tipeIzin": "许可证类型",
+    "produkTerkait": "相关产品"
+  },
+  "produk": {
+    "title": "非木材林产品目录",
+    "filterJenis": "按非木材林产品类型筛选",
+    "hargaKisaran": "价格范围",
+    "asalKelompok": "来源小组",
+    "ceritaProduk": "产品背后的故事",
+    "kisahPengrajin": "工匠的故事"
+  },
+  "cerita": {
+    "title": "卡普阿斯森林的故事",
+    "filterKategori": "按类别筛选",
+    "bacaSelengkapnya": "阅读更多",
+    "kategori": {
+      "asal-usul": "起源",
+      "anggota": "成员",
+      "produk": "产品",
+      "dampak": "影响",
+      "mitra": "合作伙伴"
+    }
+  },
+  "kegiatan": {
+    "title": "新闻与活动"
+  },
+  "mitra": {
+    "title": "战略合作伙伴",
+    "amal": "Yayasan Antangpatahu Mahaga Lewu 基金会"
+  },
+  "kontak": {
+    "title": "联系我们",
+    "nama": "姓名",
+    "email": "电子邮件",
+    "subjek": "主题",
+    "pesan": "消息",
+    "kirim": "发送消息",
+    "alamat": "地址",
+    "whatsapp": "WhatsApp",
+    "jamOperasional": "工作时间"
+  },
+  "newsletter": {
+    "placeholder": "输入您的电子邮件",
+    "subscribe": "订阅",
+    "success": "谢谢！您已成功订阅。",
+    "error": "订阅失败，请重试。"
+  },
+  "footer": {
+    "tagline": "从卡普阿斯森林，走向世界",
+    "hakCipta": "Koperasi Bulau Ngandung。版权所有。"
+  },
+  "language": {
+    "label": "语言"
+  },
+  "notFound": {
+    "title": "页面未找到",
+    "description": "抱歉，您要查找的页面不存在。",
+    "back": "返回首页"
+  },
+  "error": {
+    "title": "出现错误",
+    "description": "抱歉，发生了错误。请重试。",
+    "back": "返回首页"
+  }
+}
