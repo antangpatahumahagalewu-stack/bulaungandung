@@ -1,14 +1,17 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin, Cookie } from "lucide-react";
+import { useCookieConsent } from "@/components/cookie/CookieContext";
 
 export function Footer() {
   const t = useTranslations();
   const navT = useTranslations("nav");
   const footerT = useTranslations("footer");
+  const cookieT = useTranslations("cookie");
+  const { openPreferences } = useCookieConsent();
 
   const navLinks = [
     { key: "beranda", href: "/" },
@@ -93,19 +96,43 @@ export function Footer() {
             <h3 className="mb-3 text-xs font-semibold tracking-wider uppercase text-[hsl(240_2%_82%)]" style={{ fontFamily: "var(--font-sans)" }}>
               {t("mitra.title")}
             </h3>
-            <Link
+            <a
               href="https://antang.org"
               target="_blank"
               rel="noopener noreferrer"
               className="text-sm text-[hsl(240_2%_62%)] transition-colors hover:text-white"
             >
               Yayasan Antangpatahu Mahaga Lewu (AMAL)
-            </Link>
+            </a>
           </div>
         </div>
 
-        <div className="mt-10 border-t border-[hsl(240_2%_18%)] pt-6 text-xs text-[hsl(240_2%_48%)]">
-          <p>&copy; {new Date().getFullYear()} {footerT("hakCipta")}. Developed by Boby Mihing.</p>
+        {/* Legal */}
+        <div className="mt-10 flex flex-col items-center justify-between gap-4 border-t border-[hsl(240_2%_18%)] pt-6 sm:flex-row">
+          <p className="text-xs text-[hsl(240_2%_48%)]">
+            &copy; {new Date().getFullYear()} {footerT("hakCipta")}. Developed by Boby Mihing.
+          </p>
+          <div className="flex items-center gap-4 text-xs">
+            <Link
+              href="/kebijakan-privasi"
+              className="text-[hsl(240_2%_48%)] transition-colors hover:text-white"
+            >
+              {navT("kebijakanPrivasi")}
+            </Link>
+            <Link
+              href="/syarat-ketentuan"
+              className="text-[hsl(240_2%_48%)] transition-colors hover:text-white"
+            >
+              {navT("syaratKetentuan")}
+            </Link>
+            <button
+              onClick={openPreferences}
+              className="inline-flex items-center gap-1 text-[hsl(240_2%_48%)] transition-colors hover:text-white"
+            >
+              <Cookie className="h-3 w-3" />
+              {cookieT("settingsLink")}
+            </button>
+          </div>
         </div>
       </div>
     </footer>

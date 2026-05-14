@@ -5,7 +5,7 @@ import { getAllActivities } from "@/lib/data/loader";
 import { ActivityCard } from "@/components/ui/ActivityCard";
 
 export default async function KegiatanPage() {
-  const t = await getTranslations("kegiatan");
+  const t = await getTranslations();
   const activities = await getAllActivities();
 
   return (
@@ -17,11 +17,11 @@ export default async function KegiatanPage() {
             <div className="mb-8 inline-flex items-center gap-4">
               <span className="accent-line" />
               <span className="text-xs font-semibold uppercase tracking-[0.25em] text-acc">
-                {t("title")}
+                {t("kegiatan.title")}
               </span>
               <span className="accent-line" />
             </div>
-            <h1 className="font-serif text-fg">{t("title")}</h1>
+            <h1 className="font-serif text-fg">{t("kegiatan.title")}</h1>
           </div>
         </section>
 
@@ -36,7 +36,7 @@ export default async function KegiatanPage() {
             ) : (
               <div className="text-center py-16">
                 <p className="text-lg text-fg-dim">
-                  Belum ada berita atau kegiatan. Kunjungi kembali nanti.
+                  {t("kegiatan.empty")}
                 </p>
               </div>
             )}

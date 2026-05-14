@@ -11,7 +11,9 @@
     "cerita": "故事",
     "kegiatan": "活动",
     "mitra": "合作伙伴",
-    "kontak": "联系我们"
+    "kontak": "联系我们",
+    "kebijakanPrivasi": "隐私政策",
+    "syaratKetentuan": "条款与条件"
   },
   "hero": {
     "cta": "了解我们的故事"
@@ -32,6 +34,7 @@
   "tentang": {
     "title": "关于 Koperasi Bulau Ngandung",
     "artiNama": "名字的含义",
+    "artiNamaDesc": "\u201CBulau Ngandung\u201D 源自达雅克\u00B7恩加朱语。\u003Cstrong\u003EBulau\u003C\/strong\u003E 意为黄金或财富，而 \u003Cstrong\u003ENgandung\u003C\/strong\u003E 意为记忆或永恒的回忆。选择这个名字是因为卡普阿斯森林是必须被铭记、保护和传承的财富——而不是被砍伐和遗忘的。",
     "sejarah": "历史",
     "timeline": "发展历程",
     "visi": "愿景",
@@ -44,7 +47,12 @@
     "filterHhbk": "按非木材林产品筛选",
     "luasAreal": "总面积",
     "tipeIzin": "许可证类型",
-    "produkTerkait": "相关产品"
+    "produkTerkait": "相关产品",
+    "nomorSk": "法令编号",
+    "tanggalSk": "法令日期",
+    "nomorPks": "合作协议编号",
+    "masaBerlaku": "有效期",
+    "fungsiKawasan": "区域功能"
   },
   "produk": {
     "title": "非木材林产品目录",
@@ -64,10 +72,18 @@
       "produk": "产品",
       "dampak": "影响",
       "mitra": "合作伙伴"
+    },
+    "kategoriLabels": {
+      "asal-usul": "起源",
+      "anggota": "成员",
+      "produk": "产品",
+      "dampak": "影响",
+      "mitra": "合作伙伴"
     }
   },
   "kegiatan": {
-    "title": "新闻与活动"
+    "title": "新闻与活动",
+    "empty": "暂无新闻或活动，请稍后再查看。"
   },
   "mitra": {
     "title": "战略合作伙伴",
@@ -83,7 +99,9 @@
     "kirim": "发送消息",
     "alamat": "地址",
     "whatsapp": "WhatsApp",
-    "jamOperasional": "工作时间"
+    "jamOperasional": "工作时间",
+    "infoKontak": "联系方式",
+    "jamOperasionalValue": "周一至周五：08:00 - 16:00 WIB\n周六：08:00 - 12:00 WIB"
   },
   "newsletter": {
     "placeholder": "输入您的电子邮件",
@@ -91,9 +109,96 @@
     "success": "谢谢！您已成功订阅。",
     "error": "订阅失败，请重试。"
   },
+  "kebijakanPrivasi": {
+    "title": "隐私政策",
+    "lastUpdated": "最后更新：2026年5月14日",
+    "pengantar": "Koperasi Bulau Ngandung（以下简称「我们」或「本合作社」）致力于保护本网站用户的隐私。本隐私政策解释了我们如何收集、使用、披露和保护您的个人信息。",
+    "section1Title": "1. 我们收集的信息",
+    "section1Content1": "我们收集您在使用本网站时自愿提供的个人信息，包括：",
+    "section1List1": "姓名",
+    "section1List2": "电子邮件地址",
+    "section1List3": "电话号码",
+    "section1List4": "您通过联系表提交的消息",
+    "section1List5": "订阅通讯时提供的信息",
+    "section1Content2": "我们还通过Cookie和其他跟踪技术自动收集使用数据，包括IP地址、浏览器类型、访问的页面和访问时长。",
+    "section2Title": "2. 信息的使用",
+    "section2Content": "我们收集的信息用于：",
+    "section2List1": "回复您的咨询和消息",
+    "section2List2": "发送新闻通讯和更新（经您同意）",
+    "section2List3": "改进我们的服务和网站用户体验",
+    "section2List4": "遵守适用的法律义务和法规",
+    "section3Title": "3. 数据保护",
+    "section3Content": "我们采取合理的技术和组织安全措施，保护您的个人信息免受未经授权的访问、更改、披露或破坏。但是，互联网上的传输方法并非完全安全。",
+    "section4Title": "4. 向第三方披露",
+    "section4Content": "除非以下情况，我们不会在未经您同意的情况下向第三方出售、交易或转让您的个人信息：",
+    "section4List1": "法律要求",
+    "section4List2": "保护合作社的权利、财产或安全",
+    "section4List3": "向协助我们运营网站的可信服务提供商（依据保密协议）",
+    "section5Title": "5. 您的权利",
+    "section5Content": "您有权：",
+    "section5List1": "访问我们持有的关于您的个人数据",
+    "section5List2": "要求更正或删除您的个人数据",
+    "section5List3": "随时撤回对数据处理的同意",
+    "section5List4": "向相关数据保护机构提出投诉",
+    "section6Title": "6. Cookie",
+    "section6Content": "本网站使用Cookie以增强您的浏览体验。您可以通过浏览器设置管理Cookie偏好。我们使用的Cookie包括会话Cookie和分析Cookie，以了解用户如何与我们的网站互动。",
+    "section7Title": "7. 隐私政策的变更",
+    "section7Content": "我们可能会不时更新本隐私政策。变更将发布在此页面上，更新日期列在页面顶部。",
+    "section8Title": "8. 联系我们",
+    "section8Content": "如果您对本隐私政策有任何疑问，请通过以下方式联系我们：",
+    "section8Email": "电子邮件：info@bulaungandung.org",
+    "section8Address": "地址：印度尼西亚中加里曼丹省卡普阿斯县"
+  },
+  "syaratKetentuan": {
+    "title": "条款与条件",
+    "lastUpdated": "最后更新：2026年5月14日",
+    "pengantar": "访问和使用Koperasi Bulau Ngandung网站即表示您同意受本条款与条件的约束。如果您不同意任何部分，请勿使用本网站。",
+    "section1Title": "1. 定义",
+    "section1Content": "'合作社'指位于印度尼西亚中加里曼丹省卡普阿斯县的Koperasi Bulau Ngandung社会林业合作社。'用户'指访问本网站的任何个人。'内容'指本网站上的所有文本、图片、视频和其他材料。",
+    "section2Title": "2. 网站使用",
+    "section2Content": "您同意仅将本网站用于合法目的，且不侵犯第三方权利。禁止以下行为：",
+    "section2List1": "使用网站进行非法活动",
+    "section2List2": "传播恶意软件、病毒或恶意代码",
+    "section2List3": "黑客攻击或试图未经授权访问我们的系统",
+    "section2List4": "干扰网站的功能或安全",
+    "section3Title": "3. 知识产权",
+    "section3Content": "本网站上的所有内容，包括文本、图片、标志和其他视觉材料，均为Koperasi Bulau Ngandung或其许可方所有，并受适用版权和知识产权法保护。未经书面许可，不得复制、分发或创作衍生作品。",
+    "section4Title": "4. 产品与服务",
+    "section4Content": "本网站上显示的产品信息仅供参考。产品供应情况可能随时变化。所列价格为价格范围，可能随时更改，恕不另行通知。详情请联系我们。",
+    "section5Title": "5. 责任限制",
+    "section5Content": "Koperasi Bulau Ngandung不对因使用或无法使用本网站而产生的任何直接、间接、附带或后果性损害负责。本网站按「现状」提供，不提供任何担保。",
+    "section6Title": "6. 第三方链接",
+    "section6Content": "本网站可能包含第三方网站的链接。我们对第三方网站的内容、隐私政策或做法不承担任何责任。您使用此类网站的风险完全由您自行承担。",
+    "section7Title": "7. 条款与条件的变更",
+    "section7Content": "我们保留随时修改本条款与条件的权利。变更一经在本页面发布即立即生效。变更后继续使用本网站即表示您同意更新后的条款。",
+    "section8Title": "8. 适用法律",
+    "section8Content": "本条款与条件受印度尼西亚共和国法律管辖并据其解释。由此产生的任何争议应在印度尼西亚有管辖权的法院解决。",
+    "section9Title": "9. 联系我们",
+    "section9Content": "如果您对本条款与条件有任何疑问，请通过以下方式联系我们：",
+    "section9Email": "电子邮件：info@bulaungandung.org",
+    "section9Address": "地址：印度尼西亚中加里曼丹省卡普阿斯县"
+  },
   "footer": {
     "tagline": "从卡普阿斯森林，走向世界",
     "hakCipta": "Koperasi Bulau Ngandung。版权所有。"
+  },
+  "common": {
+    "semua": "全部",
+    "dari": "{count} / {total}",
+    "kembaliKe": "返回{page}",
+    "galeriFoto": "照片画廊",
+    "stok": "库存: {count}",
+    "habis": "缺货",
+    "asal": "来源:",
+    "pengrajin": "工匠",
+    "infoIzin": "许可证信息",
+    "jenisHhbk": "非木材林产品类型",
+    "profilKelompok": "小组简介",
+    "produkTerkait": "相关产品",
+    "ceritaProduk": "产品背后的故事",
+    "kisahPengrajin": "工匠的故事",
+    "lihatKelompok": "查看相关小组",
+    "lihatProduk": "查看相关产品"
   },
   "language": {
     "label": "语言"
@@ -107,5 +212,22 @@
     "title": "出现错误",
     "description": "抱歉，发生了错误。请重试。",
     "back": "返回首页"
+  },
+  "cookie": {
+    "title": "Cookie 设置",
+    "description": "我们使用 Cookie 来提升您的浏览体验。",
+    "privacyLink": "隐私政策",
+    "acceptAll": "接受全部",
+    "rejectAll": "拒绝全部",
+    "customize": "自定义",
+    "preferencesTitle": "Cookie 偏好",
+    "preferencesDesc": "管理您允许的 Cookie 类别。",
+    "essentialTitle": "必要",
+    "essentialDesc": "网站基本功能所需。无法禁用。",
+    "analyticsTitle": "分析",
+    "analyticsDesc": "帮助我们了解用户如何与我们的网站互动。",
+    "save": "保存",
+    "cancel": "取消",
+    "settingsLink": "Cookie 设置"
   }
 }

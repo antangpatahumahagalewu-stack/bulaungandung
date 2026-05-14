@@ -8,10 +8,15 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "**",
+        hostname: "cdn.sanity.io",
+      },
+      {
+        protocol: "https",
+        hostname: "**.sanity.io",
       },
     ],
   },
+  serverExternalPackages: [],
   async headers() {
     return [
       {
@@ -24,9 +29,11 @@ const nextConfig: NextConfig = {
               "img-src 'self' cdn.sanity.io https: data:",
               "style-src 'self' 'unsafe-inline'",
               "script-src 'self' 'unsafe-eval' 'unsafe-inline' https://va.vercel-scripts.com",
-              "connect-src 'self' *.sanity.io *.supabase.co api.resend.com https://va.vercel-scripts.com",
+              "connect-src 'self' *.sanity.io *.sanity-cdn.com *.supabase.co api.resend.com https://va.vercel-scripts.com",
               "frame-src 'self'",
               "font-src 'self'",
+              "base-uri 'self'",
+              "form-action 'self'",
             ].join("; "),
           },
           {
@@ -40,6 +47,14 @@ const nextConfig: NextConfig = {
           {
             key: "Referrer-Policy",
             value: "strict-origin-when-cross-origin",
+          },
+          {
+            key: "Strict-Transport-Security",
+            value: "max-age=63072000; includeSubDomains; preload",
+          },
+          {
+            key: "Permissions-Policy",
+            value: "camera=(), microphone=(), geolocation=(), interest-cohort=()",
           },
         ],
       },

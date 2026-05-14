@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import Image from "next/image";
 import { useLocale } from "next-intl";
 import {
@@ -19,7 +19,7 @@ export function ActivityCard({ activity }: ActivityCardProps) {
   const locale = useLocale() as "id" | "en" | "zh" | "ja";
 
   return (
-    <Link href={`/kegiatan/${activity.slug}`} className="group block">
+    <Link href={{ pathname: "/kegiatan/[slug]", params: { slug: activity.slug } }} className="group block">
       <Card className="h-full overflow-hidden border-bdr-subtle bg-card-bg hover:shadow-md hover:border-pri/20 hover:-translate-y-1 transition-all duration-500">
         <div className="relative aspect-[16/10] overflow-hidden bg-mu">
           {activity.foto?.[0] && (

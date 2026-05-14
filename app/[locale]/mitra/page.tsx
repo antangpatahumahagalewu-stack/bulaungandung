@@ -4,7 +4,7 @@ import { Footer } from "@/components/layout/Footer";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { getSite } from "@/lib/data/loader";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import Image from "next/image";
 import { ExternalLink } from "lucide-react";
 
@@ -42,7 +42,7 @@ export default async function MitraPage({ params }: PageProps) {
                 <div className="flex flex-col items-center gap-6 text-center sm:flex-row sm:text-left">
                   <div className="relative h-24 w-48 shrink-0">
                     <Image
-                      src={m.url.includes("antang.org") ? "https://antang.org/logo6.png" : (m.logo || "/images/placeholder.svg")}
+                      src={m.logo || "/images/placeholder.svg"}
                       alt={m.nama}
                       fill
                       className="object-contain"
@@ -52,10 +52,10 @@ export default async function MitraPage({ params }: PageProps) {
                     <h2 className="text-2xl font-serif font-bold text-fg tracking-tight">{m.nama}</h2>
                     <p className="mt-3 text-fg-dim leading-relaxed">{m.deskripsi[locale as keyof typeof m.deskripsi]}</p>
                     <Button asChild variant="outline" size="sm" className="mt-5">
-                      <Link href={m.url} target="_blank" rel="noopener noreferrer">
+                      <a href={m.url} target="_blank" rel="noopener noreferrer">
                         {m.url}
                         <ExternalLink className="ml-2 h-4 w-4" />
-                      </Link>
+                      </a>
                     </Button>
                   </div>
                 </div>

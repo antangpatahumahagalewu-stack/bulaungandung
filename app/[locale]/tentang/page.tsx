@@ -5,10 +5,16 @@ import { SectionTitle } from "@/components/ui/SectionTitle";
 import { Timeline } from "@/components/ui/Timeline";
 import { getSite, getTimelineItems } from "@/lib/data/loader";
 
-export default async function TentangPage() {
+interface PageProps {
+  params: Promise<{ locale: string }>;
+}
+
+export default async function TentangPage({ params }: PageProps) {
+  const { locale } = await params;
   const t = await getTranslations();
   const site = await getSite();
   const timelineItems = getTimelineItems();
+  const l = locale as keyof typeof site.aboutContent;
 
   return (
     <>
@@ -36,14 +42,7 @@ export default async function TentangPage() {
           <div className="mx-auto max-w-4xl px-6 sm:px-8 lg:px-10">
             <SectionTitle title={t("tentang.artiNama")} centered />
             <div className="mx-auto max-w-2xl text-center">
-              <p className="text-lg leading-relaxed text-fg-dim">
-                &ldquo;Bulau Ngandung&rdquo; berasal dari bahasa Dayak Ngaju.
-                <strong className="text-fg font-semibold"> Bulau</strong> berarti emas atau kekayaan, sedangkan{" "}
-                <strong className="text-fg font-semibold">Ngandung</strong> berarti kenangan atau memori yang abadi.
-                Nama ini dipilih karena hutan Kapuas adalah kekayaan yang harus
-                dikenang, dijaga, dan diwariskan — bukan untuk ditebang dan
-                dilupakan.
-              </p>
+              <p className="text-lg leading-relaxed text-fg-dim" dangerouslySetInnerHTML={{ __html: t.raw("tentang.artiNamaDesc") }} />
             </div>
           </div>
         </section>
@@ -53,7 +52,7 @@ export default async function TentangPage() {
           <div className="mx-auto max-w-4xl px-6 sm:px-8 lg:px-10">
             <SectionTitle title={t("tentang.sejarah")} centered />
             <div className="mx-auto max-w-3xl space-y-5">
-              {site.aboutContent.id.split("\n\n").slice(0, 5).map((par, i) => (
+              {site.aboutContent[l].split("\n\n").slice(0, 5).map((par, i) => (
                 <p key={i} className="text-base leading-relaxed text-fg-dim">
                   {par.trim()}
                 </p>
@@ -77,13 +76,13 @@ export default async function TentangPage() {
               <div className="rounded-2xl bg-card p-8 sm:p-10 border border-bdr">
                 <SectionTitle title={t("tentang.visi")} centered className="mb-4" />
                 <p className="text-base leading-relaxed text-fg-dim text-center">
-                  {site.visi.id}
+                  {site.visi[l]}
                 </p>
               </div>
               <div className="rounded-2xl bg-card p-8 sm:p-10 border border-bdr">
                 <SectionTitle title={t("tentang.misi")} centered className="mb-4" />
                 <div className="space-y-3 text-base text-fg-dim">
-                  {site.misi.id.split("\n").map((m, i) => (
+                  {site.misi[l].split("\n").map((m, i) => (
                     <p key={i} className="flex items-start gap-3">
                       <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-acc" />
                       {m.replace(/^\d+\.\s*/, "")}

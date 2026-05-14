@@ -11,7 +11,7 @@ import { productsFallback } from "@/lib/data/loader";
 import { getProducts } from "@/lib/sanity/queries";
 
 export default function ProdukPage() {
-  const t = useTranslations("produk");
+  const t = useTranslations();
   const [products, setProducts] = useState(productsFallback);
   const [selectedJenis, setSelectedJenis] = useState<string | null>(null);
 
@@ -38,13 +38,13 @@ export default function ProdukPage() {
             <div className="mb-8 inline-flex items-center gap-4">
               <span className="accent-line" />
               <span className="text-xs font-semibold uppercase tracking-[0.25em] text-acc">
-                {t("title")}
+                {t("produk.title")}
               </span>
               <span className="accent-line" />
             </div>
-            <h1 className="font-serif text-fg">{t("title")}</h1>
+            <h1 className="font-serif text-fg">{t("produk.title")}</h1>
             <p className="mt-4 text-sm font-medium text-fg-dim">
-              {filtered.length} dari {products.length} produk
+              {t("common.dari", { count: filtered.length, total: products.length })}
             </p>
           </div>
         </section>
@@ -53,7 +53,7 @@ export default function ProdukPage() {
           <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
             <div className="flex flex-wrap gap-2">
               <Button variant={!selectedJenis ? "accent" : "outline"} size="sm" onClick={() => setSelectedJenis(null)}>
-                Semua
+                {t("common.semua")}
               </Button>
               {allJenis.map((j) => (
                 <Button key={j} variant={selectedJenis === j ? "accent" : "outline"} size="sm" onClick={() => setSelectedJenis(selectedJenis === j ? null : j)}>

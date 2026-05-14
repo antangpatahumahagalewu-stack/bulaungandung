@@ -163,6 +163,12 @@ export async function getSite(): Promise<SiteSettings> {
           ja: blocksToText(data.aboutContent.ja),
         };
       }
+      if (data.mitra?.length) {
+        data.mitra = data.mitra.map((m: any, i: number) => ({
+          ...localSiteSettings.mitra[i],
+          ...m,
+        }));
+      }
       return data as SiteSettings;
     }
   } catch {}

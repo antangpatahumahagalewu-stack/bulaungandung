@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import Image from "next/image";
 import { useLocale, useTranslations } from "next-intl";
 import { Badge } from "@/components/ui/badge";
@@ -29,7 +29,7 @@ export function StoryCard({ story }: StoryCardProps) {
   };
 
   return (
-    <Link href={`/cerita/${story.slug}`} className="group block">
+    <Link href={{ pathname: "/cerita/[slug]", params: { slug: story.slug } }} className="group block">
       <Card className="h-full overflow-hidden border-bdr-subtle bg-card-bg hover:shadow-md hover:border-acc/20 hover:-translate-y-1 transition-all duration-500">
         <div className="relative aspect-[16/10] overflow-hidden bg-mu">
           <Image

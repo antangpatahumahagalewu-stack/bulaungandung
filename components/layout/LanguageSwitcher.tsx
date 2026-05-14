@@ -1,6 +1,6 @@
 "use client";
 
-import { useRouter, usePathname } from "next/navigation";
+import { useRouter, usePathname } from "@/i18n/routing";
 import { useLocale } from "next-intl";
 import { useTransition } from "react";
 import { Globe } from "lucide-react";
@@ -21,8 +21,7 @@ export function LanguageSwitcher() {
 
   function switchLocale(nextLocale: Locale) {
     if (nextLocale === locale) return;
-    const pathWithoutLocale = pathname.replace(/^\/(id|en|zh|ja)/, "") || "/";
-    router.push(`/${nextLocale}${pathWithoutLocale}`);
+    router.replace(pathname as any, { locale: nextLocale });
   }
 
   return (

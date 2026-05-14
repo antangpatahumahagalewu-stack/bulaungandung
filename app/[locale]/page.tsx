@@ -9,15 +9,21 @@ import { PullQuote } from "@/components/ui/PullQuote";
 import { NewsletterForm } from "@/components/ui/NewsletterForm";
 import { Button } from "@/components/ui/button";
 import { getSite, getPullQuotes, getAllProducts } from "@/lib/data/loader";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 
-export default async function BerandaPage() {
+interface PageProps {
+  params: Promise<{ locale: string }>;
+}
+
+export default async function BerandaPage({ params }: PageProps) {
+  const { locale } = await params;
   const t = await getTranslations();
   const site = await getSite();
   const pullQuotes = getPullQuotes();
   const products = await getAllProducts();
+  const l = locale as keyof typeof site.aboutContent;
 
   return (
     <>
@@ -45,8 +51,8 @@ export default async function BerandaPage() {
 
         {/* Hero */}
         <Hero
-          title={site.heroTitle.id}
-          subtitle={site.heroSubtitle.id}
+          title={site.heroTitle[l]}
+          subtitle={site.heroSubtitle[l]}
           image={site.heroImage}
         />
 
@@ -55,7 +61,7 @@ export default async function BerandaPage() {
           <div className="mx-auto max-w-5xl px-6 sm:px-8 lg:px-10">
             <div className="grid grid-cols-1 divide-y divide-bdr sm:grid-cols-3 sm:divide-x sm:divide-y-0">
               {site.stats.map((stat, i) => (
-                <StatCard key={i} value={stat.value} label={stat.label.id} />
+                <StatCard key={i} value={stat.value} label={stat.label[l]} />
               ))}
             </div>
           </div>
@@ -67,7 +73,7 @@ export default async function BerandaPage() {
             <SectionTitle title={t("home.ceritaSingkat")} centered />
             <div className="mx-auto max-w-2xl text-center">
               <p className="text-lg leading-relaxed text-fg-dim">
-                {site.aboutContent.id.slice(0, 400)}...
+                {site.aboutContent[l].slice(0, 400)}...
               </p>
             </div>
             <div className="mt-8 text-center">
@@ -97,7 +103,7 @@ export default async function BerandaPage() {
             <SectionTitle title={t("home.mitraKami")} centered />
             <div className="flex flex-wrap items-center justify-center gap-8">
               {site.mitra.map((m, i) => (
-                <Link
+                <a
                   key={i}
                   href={m.url}
                   target="_blank"
@@ -115,7 +121,7 @@ export default async function BerandaPage() {
                   <span className="text-xs font-semibold uppercase tracking-widest text-fg-dim group-hover:text-fg transition-colors">
                     {m.nama}
                   </span>
-                </Link>
+                </a>
               ))}
             </div>
           </div>

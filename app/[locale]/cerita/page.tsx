@@ -11,7 +11,7 @@ import { storiesFallback } from "@/lib/data/loader";
 import { getStories } from "@/lib/sanity/queries";
 
 export default function CeritaPage() {
-  const t = useTranslations("cerita");
+  const t = useTranslations();
   const [stories, setStories] = useState(storiesFallback);
   const [selectedKategori, setSelectedKategori] = useState<string | null>(null);
 
@@ -30,11 +30,11 @@ export default function CeritaPage() {
   }, [stories, selectedKategori]);
 
   const kategoriLabels: Record<string, string> = {
-    "asal-usul": t("kategori.asal-usul"),
-    anggota: t("kategori.anggota"),
-    produk: t("kategori.produk"),
-    dampak: t("kategori.dampak"),
-    mitra: t("kategori.mitra"),
+    "asal-usul": t("cerita.kategori.asal-usul"),
+    anggota: t("cerita.kategori.anggota"),
+    produk: t("cerita.kategori.produk"),
+    dampak: t("cerita.kategori.dampak"),
+    mitra: t("cerita.kategori.mitra"),
   };
 
   return (
@@ -47,15 +47,15 @@ export default function CeritaPage() {
             <div className="mb-8 inline-flex items-center gap-4">
               <span className="accent-line" />
               <span className="text-xs font-semibold uppercase tracking-[0.25em] text-acc">
-                {t("title")}
+                {t("cerita.title")}
               </span>
               <span className="accent-line" />
             </div>
             <h1 className="font-serif text-fg">
-              {t("title")}
+              {t("cerita.title")}
             </h1>
             <p className="mt-4 text-sm font-medium text-fg-dim">
-              {filtered.length} dari {stories.length} cerita
+              {t("common.dari", { count: filtered.length, total: stories.length })}
             </p>
           </div>
         </section>
@@ -67,7 +67,7 @@ export default function CeritaPage() {
               size="sm"
               onClick={() => setSelectedKategori(null)}
             >
-              Semua
+              {t("common.semua")}
             </Button>
             {allKategori.map((k) => (
               <Button

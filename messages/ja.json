@@ -11,7 +11,9 @@
     "cerita": "物語",
     "kegiatan": "活動",
     "mitra": "パートナー",
-    "kontak": "お問い合わせ"
+    "kontak": "お問い合わせ",
+    "kebijakanPrivasi": "プライバシーポリシー",
+    "syaratKetentuan": "利用規約"
   },
   "hero": {
     "cta": "私たちの物語を知る"
@@ -32,6 +34,7 @@
   "tentang": {
     "title": "Koperasi Bulau Ngandung について",
     "artiNama": "名前の意味",
+    "artiNamaDesc": "\u201CBulau Ngandung\u201D はダヤック\u30FBrガジュ語に由来します。\u003Cstrong\u003EBulau\u003C\/strong\u003E は黄金または富を意味し、\u003Cstrong\u003ENgandung\u003C\/strong\u003E は記憶または永遠の思い出を意味します。この名前が選ばれたのは、カプアスの森が記憶され、守られ、受け継がれるべき宝物であり、伐採され、忘れ去られるべきものではないからです。",
     "sejarah": "歴史",
     "timeline": "沿革",
     "visi": "ビジョン",
@@ -44,7 +47,12 @@
     "filterHhbk": "非木材林産物で絞り込む",
     "luasAreal": "総面積",
     "tipeIzin": "許可証タイプ",
-    "produkTerkait": "関連製品"
+    "produkTerkait": "関連製品",
+    "nomorSk": "許可証番号",
+    "tanggalSk": "許可証発行日",
+    "nomorPks": "協定番号",
+    "masaBerlaku": "有効期間",
+    "fungsiKawasan": "区域機能"
   },
   "produk": {
     "title": "非木材林産物カタログ",
@@ -64,10 +72,18 @@
       "produk": "製品",
       "dampak": "影響",
       "mitra": "パートナー"
+    },
+    "kategoriLabels": {
+      "asal-usul": "起源",
+      "anggota": "メンバー",
+      "produk": "製品",
+      "dampak": "影響",
+      "mitra": "パートナー"
     }
   },
   "kegiatan": {
-    "title": "ニュース＆活動"
+    "title": "ニュース＆活動",
+    "empty": "まだニュースや活動はありません。後で再度ご確認ください。"
   },
   "mitra": {
     "title": "戦略的パートナー",
@@ -83,7 +99,9 @@
     "kirim": "送信",
     "alamat": "住所",
     "whatsapp": "WhatsApp",
-    "jamOperasional": "営業時間"
+    "jamOperasional": "営業時間",
+    "infoKontak": "連絡先情報",
+    "jamOperasionalValue": "月曜～金曜：08:00 - 16:00 WIB\n土曜：08:00 - 12:00 WIB"
   },
   "newsletter": {
     "placeholder": "メールアドレスを入力",
@@ -91,9 +109,96 @@
     "success": "ありがとうございます！購読が完了しました。",
     "error": "購読に失敗しました。もう一度お試しください。"
   },
+  "kebijakanPrivasi": {
+    "title": "プライバシーポリシー",
+    "lastUpdated": "最終更新日: 2026年5月14日",
+    "pengantar": "Koperasi Bulau Ngandung（以下「当協同組合」）は、本ウェブサイトのユーザーのプライバシー保護に努めています。本方針は、お客様の個人情報の収集、使用、開示、保護方法について説明します。",
+    "section1Title": "1. 収集する情報",
+    "section1Content1": "本ウェブサイトを利用する際に、お客様が自主的に提供する個人情報を収集します。これには以下が含まれます：",
+    "section1List1": "氏名",
+    "section1List2": "メールアドレス",
+    "section1List3": "電話番号",
+    "section1List4": "お問い合わせフォームから送信されたメッセージ",
+    "section1List5": "ニュースレター登録時に提供された情報",
+    "section1Content2": "また、Cookieやその他の追跡技術を通じて、IPアドレス、ブラウザの種類、訪問ページ、滞在時間などの利用データを自動的に収集します。",
+    "section2Title": "2. 情報の使用目的",
+    "section2Content": "収集した情報は以下の目的で使用されます：",
+    "section2List1": "お問い合わせへの返信",
+    "section2List2": "ニュースレターの送信（同意を得た上で）",
+    "section2List3": "サービスとサイト体験の向上",
+    "section2List4": "法的義務と規制の遵守",
+    "section3Title": "3. データ保護",
+    "section3Content": "当協同組合は、個人情報への不正アクセス、改ざん、開示、または破壊を防ぐため、合理的な技術的および組織的セキュリティ対策を実施しています。ただし、インターネット上の送信方法は完全に安全ではありません。",
+    "section4Title": "4. 第三者への開示",
+    "section4Content": "当協同組合は、以下の場合を除き、お客様の同意なしに個人情報を第三者に販売、交換、または譲渡することはありません：",
+    "section4List1": "法令により要求される場合",
+    "section4List2": "協同組合の権利、財産、または安全を保護するため",
+    "section4List3": "ウェブサイト運営を支援する信頼できるサービスプロバイダー（機密保持契約に基づく）",
+    "section5Title": "5. お客様の権利",
+    "section5Content": "お客様には以下の権利があります：",
+    "section5List1": "当協同組合が保管する個人データへのアクセス",
+    "section5List2": "個人データの訂正または削除の要求",
+    "section5List3": "いつでもデータ処理の同意を撤回する権利",
+    "section5List4": "所管のデータ保護機関への苦情申し立て",
+    "section6Title": "6. Cookie",
+    "section6Content": "本ウェブサイトは、ブラウジング体験を向上させるためにCookieを使用しています。ブラウザの設定からCookieの設定を管理できます。使用するCookieには、セッションCookieや、ユーザーがサイトとどのように相互作用するかを理解するための分析Cookieが含まれます。",
+    "section7Title": "7. プライバシーポリシーの変更",
+    "section7Content": "本方針は随時更新されることがあります。変更があった場合は、このページに掲載され、上部に更新日が記載されます。",
+    "section8Title": "8. お問い合わせ",
+    "section8Content": "本方針に関するご質問がある場合は、以下までお問い合わせください：",
+    "section8Email": "メール: info@bulaungandung.org",
+    "section8Address": "住所: カプアス県、中部カリマンタン、インドネシア"
+  },
+  "syaratKetentuan": {
+    "title": "利用規約",
+    "lastUpdated": "最終更新日: 2026年5月14日",
+    "pengantar": "Koperasi Bulau Ngandungのウェブサイトにアクセスし利用することにより、本利用規約に拘束されることに同意したものとみなします。一部でも同意できない場合は、本ウェブサイトをご利用にならないでください。",
+    "section1Title": "1. 定義",
+    "section1Content": "'協同組合'とは、中部カリマンタン州カプアス県に拠点を置く社会林業協同組合、Koperasi Bulau Ngandungを指します。'ユーザー'とは、本ウェブサイトにアクセスするすべての個人を指します。'コンテンツ'とは、本ウェブサイト上のすべてのテキスト、画像、動画、その他の資料を指します。",
+    "section2Title": "2. ウェブサイトの利用",
+    "section2Content": "お客様は、本ウェブサイトを合法的な目的でのみ使用し、第三者の権利を侵害しないことに同意するものとします。以下の行為は禁止されています：",
+    "section2List1": "違法行為のためのウェブサイトの使用",
+    "section2List2": "マルウェア、ウイルス、悪意のあるコードの配布",
+    "section2List3": "システムへの不正アクセスの試み",
+    "section2List4": "ウェブサイトの機能やセキュリティの妨害",
+    "section3Title": "3. 知的財産権",
+    "section3Content": "本ウェブサイト上のすべてのコンテンツ（テキスト、画像、ロゴ、その他の視覚資料を含む）は、Koperasi Bulau Ngandungまたはそのライセンサーが所有し、適用法の下で著作権および知的財産権によって保護されています。書面による許可なく、複製、配布、または二次的著作物を作成することはできません。",
+    "section4Title": "4. 製品とサービス",
+    "section4Content": "本ウェブサイトに表示される製品情報は情報提供を目的としています。製品の在庫状況は随時変更される可能性があります。表示価格は価格帯であり、予告なく変更される場合があります。詳細についてはお問い合わせください。",
+    "section5Title": "5. 責任の制限",
+    "section5Content": "Koperasi Bulau Ngandungは、本ウェブサイトの使用または使用不能から生じる直接的、間接的、付随的、または結果的損害について責任を負いません。本ウェブサイトは「現状のまま」提供され、いかなる保証もありません。",
+    "section6Title": "6. サードパーティリンク",
+    "section6Content": "本ウェブサイトにはサードパーティサイトへのリンクが含まれる場合があります。当協同組合は、サードパーティサイトのコンテンツ、プライバシーポリシー、または慣行について責任を負いません。そのようなサイトの利用はすべてお客様自身の責任で行ってください。",
+    "section7Title": "7. 利用規約の変更",
+    "section7Content": "当協同組合は、いつでも本利用規約を変更する権利を留保します。変更はこのページに掲載された時点で直ちに有効となります。変更後に引き続きウェブサイトを利用することにより、更新された条件に同意したものとみなされます。",
+    "section8Title": "8. 準拠法",
+    "section8Content": "本利用規約は、インドネシア共和国の法律に準拠し解釈されます。生じた紛争は、インドネシアの管轄裁判所で解決されるものとします。",
+    "section9Title": "9. お問い合わせ",
+    "section9Content": "本利用規約に関するご質問がある場合は、以下までお問い合わせください：",
+    "section9Email": "メール: info@bulaungandung.org",
+    "section9Address": "住所: カプアス県、中部カリマンタン、インドネシア"
+  },
   "footer": {
     "tagline": "カプアスの森から世界へ",
     "hakCipta": "Koperasi Bulau Ngandung。全著作権所有。"
+  },
+  "common": {
+    "semua": "すべて",
+    "dari": "{count} / {total}",
+    "kembaliKe": "{page}に戻る",
+    "galeriFoto": "フォトギャラリー",
+    "stok": "在庫: {count}",
+    "habis": "在庫切れ",
+    "asal": "生産地:",
+    "pengrajin": "職人",
+    "infoIzin": "許可証情報",
+    "jenisHhbk": "非木材林産物の種類",
+    "profilKelompok": "グループプロフィール",
+    "produkTerkait": "関連製品",
+    "ceritaProduk": "製品の背景にある物語",
+    "kisahPengrajin": "職人の物語",
+    "lihatKelompok": "関連グループを見る",
+    "lihatProduk": "関連製品を見る"
   },
   "language": {
     "label": "言語"
@@ -107,5 +212,22 @@
     "title": "エラーが発生しました",
     "description": "エラーが発生しました。もう一度お試しください。",
     "back": "ホームに戻る"
+  },
+  "cookie": {
+    "title": "Cookie 設定",
+    "description": "お客様のブラウジング体験を向上させるためにCookieを使用しています。",
+    "privacyLink": "プライバシーポリシー",
+    "acceptAll": "すべて許可",
+    "rejectAll": "すべて拒否",
+    "customize": "カスタマイズ",
+    "preferencesTitle": "Cookie 設定",
+    "preferencesDesc": "許可するCookieのカテゴリを管理します。",
+    "essentialTitle": "必須",
+    "essentialDesc": "ウェブサイトの基本機能に必要です。無効にできません。",
+    "analyticsTitle": "分析",
+    "analyticsDesc": "ユーザーがサイトとどのようにやり取りするかを把握するのに役立ちます。",
+    "save": "保存",
+    "cancel": "キャンセル",
+    "settingsLink": "Cookie 設定"
   }
 }

@@ -11,7 +11,9 @@
     "cerita": "Cerita",
     "kegiatan": "Kegiatan",
     "mitra": "Mitra",
-    "kontak": "Kontak"
+    "kontak": "Kontak",
+    "kebijakanPrivasi": "Kebijakan Privasi",
+    "syaratKetentuan": "Syarat & Ketentuan"
   },
   "hero": {
     "cta": "Kenali Cerita Kami"
@@ -32,6 +34,7 @@
   "tentang": {
     "title": "Tentang Koperasi Bulau Ngandung",
     "artiNama": "Arti Nama",
+    "artiNamaDesc": "\u201CBulau Ngandung\u201D berasal dari bahasa Dayak Ngaju. \u003Cstrong\u003EBulau\u003C\/strong\u003E berarti emas atau kekayaan, sedangkan \u003Cstrong\u003ENgandung\u003C\/strong\u003E berarti kenangan atau memori yang abadi. Nama ini dipilih karena hutan Kapuas adalah kekayaan yang harus dikenang, dijaga, dan diwariskan \u2014 bukan untuk ditebang dan dilupakan.",
     "sejarah": "Sejarah",
     "timeline": "Perjalanan",
     "visi": "Visi",
@@ -44,7 +47,12 @@
     "filterHhbk": "Filter HHBK",
     "luasAreal": "Luas Areal",
     "tipeIzin": "Tipe Izin",
-    "produkTerkait": "Produk Terkait"
+    "produkTerkait": "Produk Terkait",
+    "nomorSk": "Nomor SK",
+    "tanggalSk": "Tanggal SK",
+    "nomorPks": "Nomor PKS",
+    "masaBerlaku": "Masa Berlaku",
+    "fungsiKawasan": "Fungsi Kawasan"
   },
   "produk": {
     "title": "Katalog Hasil Hutan Bukan Kayu",
@@ -64,10 +72,18 @@
       "produk": "Produk",
       "dampak": "Dampak",
       "mitra": "Mitra"
+    },
+    "kategoriLabels": {
+      "asal-usul": "Asal-usul",
+      "anggota": "Anggota",
+      "produk": "Produk",
+      "dampak": "Dampak",
+      "mitra": "Mitra"
     }
   },
   "kegiatan": {
-    "title": "Berita & Kegiatan"
+    "title": "Berita & Kegiatan",
+    "empty": "Belum ada berita atau kegiatan. Kunjungi kembali nanti."
   },
   "mitra": {
     "title": "Mitra Strategis",
@@ -83,7 +99,9 @@
     "kirim": "Kirim Pesan",
     "alamat": "Alamat",
     "whatsapp": "WhatsApp",
-    "jamOperasional": "Jam Operasional"
+    "jamOperasional": "Jam Operasional",
+    "infoKontak": "Info Kontak",
+    "jamOperasionalValue": "Senin - Jumat: 08.00 - 16.00 WIB\nSabtu: 08.00 - 12.00 WIB"
   },
   "newsletter": {
     "placeholder": "Masukkan email Anda",
@@ -91,9 +109,96 @@
     "success": "Terima kasih! Anda telah berlangganan.",
     "error": "Gagal berlangganan. Silakan coba lagi."
   },
+  "kebijakanPrivasi": {
+    "title": "Kebijakan Privasi",
+    "lastUpdated": "Terakhir diperbarui: 14 Mei 2026",
+    "pengantar": "Koperasi Bulau Ngandung ('kami', 'koperasi') berkomitmen untuk melindungi privasi pengguna situs web ini. Kebijakan Privasi ini menjelaskan bagaimana kami mengumpulkan, menggunakan, mengungkapkan, dan melindungi informasi pribadi Anda.",
+    "section1Title": "1. Informasi yang Kami Kumpulkan",
+    "section1Content1": "Kami mengumpulkan informasi pribadi yang Anda berikan secara sukarela saat menggunakan situs web ini, termasuk:",
+    "section1List1": "Nama lengkap",
+    "section1List2": "Alamat email",
+    "section1List3": "Nomor telepon",
+    "section1List4": "Pesan yang Anda kirimkan melalui formulir kontak",
+    "section1List5": "Informasi yang Anda berikan saat mendaftar newsletter",
+    "section1Content2": "Kami juga mengumpulkan data penggunaan secara otomatis melalui cookie dan teknologi pelacakan lainnya, termasuk alamat IP, jenis browser, halaman yang dikunjungi, dan durasi kunjungan.",
+    "section2Title": "2. Penggunaan Informasi",
+    "section2Content": "Informasi yang kami kumpulkan digunakan untuk:",
+    "section2List1": "Menanggapi pertanyaan dan pesan yang Anda kirimkan",
+    "section2List2": "Mengirimkan newsletter dan pembaruan (dengan persetujuan Anda)",
+    "section2List3": "Meningkatkan layanan dan pengalaman pengguna situs web",
+    "section2List4": "Mematuhi kewajiban hukum dan peraturan yang berlaku",
+    "section3Title": "3. Perlindungan Data",
+    "section3Content": "Kami menerapkan langkah-langkah keamanan teknis dan organisasi yang wajar untuk melindungi informasi pribadi Anda dari akses tidak sah, perubahan, pengungkapan, atau penghancuran. Namun, tidak ada metode transmisi melalui internet yang sepenuhnya aman.",
+    "section4Title": "4. Pengungkapan kepada Pihak Ketiga",
+    "section4Content": "Kami tidak menjual, memperdagangkan, atau mentransfer informasi pribadi Anda kepada pihak ketiga tanpa persetujuan Anda, kecuali:",
+    "section4List1": "Jika diwajibkan oleh hukum",
+    "section4List2": "Untuk melindungi hak, properti, atau keselamatan koperasi",
+    "section4List3": "Kepada penyedia layanan tepercaya yang membantu kami mengoperasikan situs web (dengan perjanjian kerahasiaan)",
+    "section5Title": "5. Hak Anda",
+    "section5Content": "Anda berhak untuk:",
+    "section5List1": "Mengakses data pribadi yang kami simpan tentang Anda",
+    "section5List2": "Meminta koreksi atau penghapusan data pribadi Anda",
+    "section5List3": "Menarik persetujuan untuk pemrosesan data kapan saja",
+    "section5List4": "Mengajukan keluhan kepada otoritas perlindungan data yang berwenang",
+    "section6Title": "6. Cookie",
+    "section6Content": "Situs web kami menggunakan cookie untuk meningkatkan pengalaman browsing. Anda dapat mengatur preferensi cookie melalui pengaturan browser Anda. Cookie yang kami gunakan meliputi cookie sesi dan cookie analitik untuk memahami bagaimana pengguna berinteraksi dengan situs kami.",
+    "section7Title": "7. Perubahan Kebijakan Privasi",
+    "section7Content": "Kami dapat memperbarui kebijakan privasi ini dari waktu ke waktu. Perubahan akan diumumkan di halaman ini dengan tanggal pembaruan yang tercantum di bagian atas.",
+    "section8Title": "8. Hubungi Kami",
+    "section8Content": "Jika Anda memiliki pertanyaan tentang kebijakan privasi ini, silakan hubungi kami melalui:",
+    "section8Email": "Email: info@bulaungandung.org",
+    "section8Address": "Alamat: Kabupaten Kapuas, Kalimantan Tengah, Indonesia"
+  },
+  "syaratKetentuan": {
+    "title": "Syarat & Ketentuan",
+    "lastUpdated": "Terakhir diperbarui: 14 Mei 2026",
+    "pengantar": "Dengan mengakses dan menggunakan situs web Koperasi Bulau Ngandung, Anda menyetujui untuk terikat oleh Syarat & Ketentuan ini. Jika Anda tidak setuju dengan bagian mana pun, harap jangan gunakan situs web kami.",
+    "section1Title": "1. Definisi",
+    "section1Content": "'Koperasi' merujuk pada Koperasi Bulau Ngandung, koperasi perhutanan sosial yang berkedudukan di Kabupaten Kapuas, Kalimantan Tengah. 'Pengguna' merujuk pada setiap individu yang mengakses situs web ini. 'Konten' merujuk pada semua teks, gambar, video, dan materi lain yang terdapat di situs web ini.",
+    "section2Title": "2. Penggunaan Situs Web",
+    "section2Content": "Anda setuju untuk menggunakan situs web ini hanya untuk tujuan yang sah dan tidak melanggar hak pihak ketiga. Anda dilarang:",
+    "section2List1": "Menggunakan situs web untuk aktivitas ilegal",
+    "section2List2": "Menyebarkan malware, virus, atau kode berbahaya",
+    "section2List3": "Melakukan peretasan atau upaya akses tidak sah ke sistem kami",
+    "section2List4": "Mengganggu fungsionalitas atau keamanan situs web",
+    "section3Title": "3. Kekayaan Intelektual",
+    "section3Content": "Seluruh konten di situs web ini, termasuk teks, gambar, logo, dan materi visual lainnya, adalah milik Koperasi Bulau Ngandung atau pemberi lisensinya dan dilindungi oleh undang-undang hak cipta dan kekayaan intelektual yang berlaku. Anda tidak boleh mereproduksi, mendistribusikan, atau membuat karya turunan tanpa izin tertulis.",
+    "section4Title": "4. Produk dan Layanan",
+    "section4Content": "Informasi produk yang ditampilkan di situs web ini disediakan untuk tujuan informasi. Ketersediaan produk dapat berubah sewaktu-waktu. Harga yang tercantum adalah kisaran harga dan dapat berubah tanpa pemberitahuan sebelumnya. Untuk informasi lebih lanjut, silakan hubungi kami.",
+    "section5Title": "5. Batasan Tanggung Jawab",
+    "section5Content": "Koperasi Bulau Ngandung tidak bertanggung jawab atas kerugian langsung, tidak langsung, insidental, atau konsekuensial yang timbul dari penggunaan atau ketidakmampuan menggunakan situs web ini. Situs web ini disediakan 'sebagaimana adanya' tanpa jaminan apa pun.",
+    "section6Title": "6. Tautan Pihak Ketiga",
+    "section6Content": "Situs web kami mungkin berisi tautan ke situs pihak ketiga. Kami tidak bertanggung jawab atas konten, kebijakan privasi, atau praktik situs pihak ketiga. Penggunaan situs tersebut sepenuhnya merupakan risiko Anda sendiri.",
+    "section7Title": "7. Perubahan Syarat & Ketentuan",
+    "section7Content": "Kami berhak mengubah Syarat & Ketentuan ini kapan saja. Perubahan akan berlaku segera setelah dipublikasikan di halaman ini. Dengan terus menggunakan situs web setelah perubahan, Anda menyetujui syarat yang telah diperbarui.",
+    "section8Title": "8. Hukum yang Berlaku",
+    "section8Content": "Syarat & Ketentuan ini diatur oleh dan ditafsirkan sesuai dengan hukum Republik Indonesia. Setiap sengketa yang timbul akan diselesaikan di pengadilan yang berwenang di Indonesia.",
+    "section9Title": "9. Hubungi Kami",
+    "section9Content": "Jika Anda memiliki pertanyaan tentang Syarat & Ketentuan ini, silakan hubungi kami melalui:",
+    "section9Email": "Email: info@bulaungandung.org",
+    "section9Address": "Alamat: Kabupaten Kapuas, Kalimantan Tengah, Indonesia"
+  },
   "footer": {
     "tagline": "Dari Hutan Kapuas, untuk Dunia",
     "hakCipta": "Koperasi Bulau Ngandung. Hak cipta dilindungi."
+  },
+  "common": {
+    "semua": "Semua",
+    "dari": "{count} dari {total}",
+    "kembaliKe": "Kembali ke {page}",
+    "galeriFoto": "Galeri Foto",
+    "stok": "Stok: {count}",
+    "habis": "Habis",
+    "asal": "Asal:",
+    "pengrajin": "Pengrajin",
+    "infoIzin": "Informasi Izin",
+    "jenisHhbk": "Jenis HHBK",
+    "profilKelompok": "Profil Kelompok",
+    "produkTerkait": "Produk Terkait",
+    "ceritaProduk": "Cerita di Balik Produk",
+    "kisahPengrajin": "Kisah Pengrajin",
+    "lihatKelompok": "Lihat Kelompok Terkait",
+    "lihatProduk": "Lihat Produk Terkait"
   },
   "language": {
     "label": "Bahasa"
@@ -107,5 +212,22 @@
     "title": "Terjadi Kesalahan",
     "description": "Maaf, terjadi kesalahan. Silakan coba lagi.",
     "back": "Kembali ke Beranda"
+  },
+  "cookie": {
+    "title": "Pengaturan Cookie",
+    "description": "Kami menggunakan cookie untuk meningkatkan pengalaman browsing Anda.",
+    "privacyLink": "Kebijakan Privasi",
+    "acceptAll": "Terima Semua",
+    "rejectAll": "Tolak Semua",
+    "customize": "Kustom",
+    "preferencesTitle": "Preferensi Cookie",
+    "preferencesDesc": "Kelola kategori cookie yang ingin Anda izinkan.",
+    "essentialTitle": "Esensial",
+    "essentialDesc": "Diperlukan untuk fungsi dasar situs web. Tidak dapat dinonaktifkan.",
+    "analyticsTitle": "Analitik",
+    "analyticsDesc": "Membantu kami memahami bagaimana pengguna berinteraksi dengan situs kami.",
+    "save": "Simpan",
+    "cancel": "Batal",
+    "settingsLink": "Pengaturan Cookie"
   }
 }

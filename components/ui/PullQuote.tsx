@@ -19,7 +19,7 @@ export function PullQuote({ data, className }: PullQuoteProps) {
     >
       <Quote className="mx-auto mb-6 h-10 w-10 text-acc/30" aria-hidden="true" />
       <p className="text-xl font-medium italic leading-relaxed text-fg sm:text-2xl" style={{ fontFamily: "var(--font-serif)" }}>
-        &ldquo;{data.quote}&rdquo;
+        &ldquo;{data.quote[locale as keyof typeof data.quote] || data.quote.id}&rdquo;
       </p>
       <footer className="mt-8 flex items-center justify-center gap-4">
         {data.foto && (

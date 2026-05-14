@@ -2,8 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { Link, usePathname } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
@@ -54,7 +53,7 @@ export function Navbar() {
 
         <nav className="hidden items-center gap-0.5 md:flex">
           {navItems.map((item) => {
-            const itemHref = `/${item.key === "beranda" ? "" : item.key}`;
+            const itemHref = (item.key === "beranda" ? "/" : `/${item.key}`) as "/" | "/tentang" | "/produk" | "/kelompok" | "/cerita" | "/kegiatan" | "/kontak" | "/mitra";
             const isActive =
               item.key === "beranda"
                 ? pathWithoutLocale === "/"
@@ -91,8 +90,8 @@ export function Navbar() {
             </SheetTrigger>
             <SheetContent side="right" className="w-[280px] pt-14">
               <nav className="flex flex-col gap-0.5">
-                {navItems.map((item) => {
-                  const itemHref = `/${item.key === "beranda" ? "" : item.key}`;
+                  {navItems.map((item) => {
+                  const itemHref = (item.key === "beranda" ? "/" : `/${item.key}`) as "/" | "/tentang" | "/produk" | "/kelompok" | "/cerita" | "/kegiatan" | "/kontak" | "/mitra";
                   const isActive =
                     item.key === "beranda"
                       ? pathWithoutLocale === "/"
@@ -113,6 +112,22 @@ export function Navbar() {
                   );
                 })}
               </nav>
+              <div className="mt-6 border-t border-bdr pt-4">
+                <div className="flex flex-col gap-1">
+                  <Link
+                    href="/kebijakan-privasi"
+                    className="rounded-lg px-3.5 py-2 text-sm text-mu-fg transition-colors hover:bg-mu hover:text-fg"
+                  >
+                    {t("kebijakanPrivasi")}
+                  </Link>
+                  <Link
+                    href="/syarat-ketentuan"
+                    className="rounded-lg px-3.5 py-2 text-sm text-mu-fg transition-colors hover:bg-mu hover:text-fg"
+                  >
+                    {t("syaratKetentuan")}
+                  </Link>
+                </div>
+              </div>
             </SheetContent>
           </Sheet>
         </div>

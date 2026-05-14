@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import Image from "next/image";
 import { useLocale } from "next-intl";
 import { Badge } from "@/components/ui/badge";
@@ -20,7 +20,7 @@ export function MemberCard({ member }: MemberCardProps) {
   const locale = useLocale() as "id" | "en" | "zh" | "ja";
 
   return (
-    <Link href={`/kelompok/${member.slug}`} className="group block">
+    <Link href={{ pathname: "/kelompok/[slug]", params: { slug: member.slug } }} className="group block">
       <Card className="h-full overflow-hidden border-bdr-subtle bg-card-bg hover:shadow-md hover:border-pri/20 hover:-translate-y-1 transition-all duration-500">
         <div className="relative aspect-[16/10] overflow-hidden bg-mu">
           <Image

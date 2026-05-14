@@ -11,7 +11,9 @@
     "cerita": "Stories",
     "kegiatan": "Activities",
     "mitra": "Partners",
-    "kontak": "Contact"
+    "kontak": "Contact",
+    "kebijakanPrivasi": "Privacy Policy",
+    "syaratKetentuan": "Terms & Conditions"
   },
   "hero": {
     "cta": "Discover Our Stories"
@@ -32,6 +34,7 @@
   "tentang": {
     "title": "About Koperasi Bulau Ngandung",
     "artiNama": "Meaning of the Name",
+    "artiNamaDesc": "\u201CBulau Ngandung\u201D comes from the Dayak Ngaju language. \u003Cstrong\u003EBulau\u003C\/strong\u003E means gold or wealth, while \u003Cstrong\u003ENgandung\u003C\/strong\u003E means remembrance or eternal memory. This name was chosen because the Kapuas forest is a treasure that must be remembered, protected, and passed on \u2014 not cut down and forgotten.",
     "sejarah": "History",
     "timeline": "Timeline",
     "visi": "Vision",
@@ -44,7 +47,12 @@
     "filterHhbk": "Filter by NTFP",
     "luasAreal": "Total Area",
     "tipeIzin": "License Type",
-    "produkTerkait": "Related Products"
+    "produkTerkait": "Related Products",
+    "nomorSk": "SK Number",
+    "tanggalSk": "SK Date",
+    "nomorPks": "PKS Number",
+    "masaBerlaku": "Validity Period",
+    "fungsiKawasan": "Area Function"
   },
   "produk": {
     "title": "Non-Timber Forest Product Catalog",
@@ -64,10 +72,18 @@
       "produk": "Products",
       "dampak": "Impact",
       "mitra": "Partners"
+    },
+    "kategoriLabels": {
+      "asal-usul": "Origins",
+      "anggota": "Members",
+      "produk": "Products",
+      "dampak": "Impact",
+      "mitra": "Partners"
     }
   },
   "kegiatan": {
-    "title": "News & Activities"
+    "title": "News & Activities",
+    "empty": "No news or activities yet. Please check back later."
   },
   "mitra": {
     "title": "Strategic Partners",
@@ -83,7 +99,9 @@
     "kirim": "Send Message",
     "alamat": "Address",
     "whatsapp": "WhatsApp",
-    "jamOperasional": "Operating Hours"
+    "jamOperasional": "Operating Hours",
+    "infoKontak": "Contact Info",
+    "jamOperasionalValue": "Mon - Fri: 08:00 - 16:00 WIB\nSat: 08:00 - 12:00 WIB"
   },
   "newsletter": {
     "placeholder": "Enter your email",
@@ -91,9 +109,96 @@
     "success": "Thank you! You are now subscribed.",
     "error": "Failed to subscribe. Please try again."
   },
+  "kebijakanPrivasi": {
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated: May 14, 2026",
+    "pengantar": "Koperasi Bulau Ngandung ('we', 'the cooperative') is committed to protecting the privacy of users of this website. This Privacy Policy explains how we collect, use, disclose, and protect your personal information.",
+    "section1Title": "1. Information We Collect",
+    "section1Content1": "We collect personal information that you voluntarily provide when using this website, including:",
+    "section1List1": "Full name",
+    "section1List2": "Email address",
+    "section1List3": "Phone number",
+    "section1List4": "Messages you submit through the contact form",
+    "section1List5": "Information provided when subscribing to our newsletter",
+    "section1Content2": "We also automatically collect usage data through cookies and other tracking technologies, including IP address, browser type, pages visited, and visit duration.",
+    "section2Title": "2. Use of Information",
+    "section2Content": "The information we collect is used to:",
+    "section2List1": "Respond to your inquiries and messages",
+    "section2List2": "Send newsletters and updates (with your consent)",
+    "section2List3": "Improve our services and website user experience",
+    "section2List4": "Comply with applicable legal obligations and regulations",
+    "section3Title": "3. Data Protection",
+    "section3Content": "We implement reasonable technical and organizational security measures to protect your personal information from unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the internet is completely secure.",
+    "section4Title": "4. Disclosure to Third Parties",
+    "section4Content": "We do not sell, trade, or transfer your personal information to third parties without your consent, except:",
+    "section4List1": "If required by law",
+    "section4List2": "To protect the rights, property, or safety of the cooperative",
+    "section4List3": "To trusted service providers who assist us in operating the website (under confidentiality agreements)",
+    "section5Title": "5. Your Rights",
+    "section5Content": "You have the right to:",
+    "section5List1": "Access the personal data we hold about you",
+    "section5List2": "Request correction or deletion of your personal data",
+    "section5List3": "Withdraw consent for data processing at any time",
+    "section5List4": "Lodge a complaint with the relevant data protection authority",
+    "section6Title": "6. Cookies",
+    "section6Content": "Our website uses cookies to enhance your browsing experience. You can manage your cookie preferences through your browser settings. Cookies we use include session cookies and analytics cookies to understand how users interact with our site.",
+    "section7Title": "7. Changes to This Privacy Policy",
+    "section7Content": "We may update this privacy policy from time to time. Changes will be posted on this page with the update date listed at the top.",
+    "section8Title": "8. Contact Us",
+    "section8Content": "If you have any questions about this privacy policy, please contact us at:",
+    "section8Email": "Email: info@bulaungandung.org",
+    "section8Address": "Address: Kapuas Regency, Central Kalimantan, Indonesia"
+  },
+  "syaratKetentuan": {
+    "title": "Terms & Conditions",
+    "lastUpdated": "Last updated: May 14, 2026",
+    "pengantar": "By accessing and using the Koperasi Bulau Ngandung website, you agree to be bound by these Terms & Conditions. If you do not agree with any part, please do not use our website.",
+    "section1Title": "1. Definitions",
+    "section1Content": "'Cooperative' refers to Koperasi Bulau Ngandung, a social forestry cooperative based in Kapuas Regency, Central Kalimantan. 'User' refers to any individual accessing this website. 'Content' refers to all text, images, videos, and other materials on this website.",
+    "section2Title": "2. Website Use",
+    "section2Content": "You agree to use this website only for lawful purposes and not to infringe the rights of third parties. You are prohibited from:",
+    "section2List1": "Using the website for illegal activities",
+    "section2List2": "Distributing malware, viruses, or malicious code",
+    "section2List3": "Hacking or attempting unauthorized access to our systems",
+    "section2List4": "Disrupting the functionality or security of the website",
+    "section3Title": "3. Intellectual Property",
+    "section3Content": "All content on this website, including text, images, logos, and other visual materials, is owned by Koperasi Bulau Ngandung or its licensors and is protected by applicable copyright and intellectual property laws. You may not reproduce, distribute, or create derivative works without written permission.",
+    "section4Title": "4. Products and Services",
+    "section4Content": "Product information displayed on this website is provided for informational purposes. Product availability may change at any time. Prices listed are price ranges and may change without prior notice. For more information, please contact us.",
+    "section5Title": "5. Limitation of Liability",
+    "section5Content": "Koperasi Bulau Ngandung is not liable for any direct, indirect, incidental, or consequential damages arising from the use or inability to use this website. This website is provided 'as is' without any warranty.",
+    "section6Title": "6. Third-Party Links",
+    "section6Content": "Our website may contain links to third-party sites. We are not responsible for the content, privacy policies, or practices of third-party sites. Your use of such sites is entirely at your own risk.",
+    "section7Title": "7. Changes to Terms & Conditions",
+    "section7Content": "We reserve the right to modify these Terms & Conditions at any time. Changes will take effect immediately upon posting on this page. By continuing to use the website after changes, you agree to the updated terms.",
+    "section8Title": "8. Governing Law",
+    "section8Content": "These Terms & Conditions are governed by and construed in accordance with the laws of the Republic of Indonesia. Any disputes arising shall be resolved in the competent courts of Indonesia.",
+    "section9Title": "9. Contact Us",
+    "section9Content": "If you have any questions about these Terms & Conditions, please contact us at:",
+    "section9Email": "Email: info@bulaungandung.org",
+    "section9Address": "Address: Kapuas Regency, Central Kalimantan, Indonesia"
+  },
   "footer": {
     "tagline": "From the Kapuas Forest, to the World",
     "hakCipta": "Koperasi Bulau Ngandung. All rights reserved."
+  },
+  "common": {
+    "semua": "All",
+    "dari": "{count} of {total}",
+    "kembaliKe": "Back to {page}",
+    "galeriFoto": "Photo Gallery",
+    "stok": "Stock: {count}",
+    "habis": "Out of Stock",
+    "asal": "Origin:",
+    "pengrajin": "Artisan",
+    "infoIzin": "License Info",
+    "jenisHhbk": "NTFP Types",
+    "profilKelompok": "Group Profile",
+    "produkTerkait": "Related Products",
+    "ceritaProduk": "The Story Behind the Product",
+    "kisahPengrajin": "Artisan\u2019s Story",
+    "lihatKelompok": "View Related Group",
+    "lihatProduk": "View Related Product"
   },
   "language": {
     "label": "Language"
@@ -107,5 +212,22 @@
     "title": "Something Went Wrong",
     "description": "Sorry, an error occurred. Please try again.",
     "back": "Back to Home"
+  },
+  "cookie": {
+    "title": "Cookie Settings",
+    "description": "We use cookies to enhance your browsing experience.",
+    "privacyLink": "Privacy Policy",
+    "acceptAll": "Accept All",
+    "rejectAll": "Reject All",
+    "customize": "Customize",
+    "preferencesTitle": "Cookie Preferences",
+    "preferencesDesc": "Manage which cookie categories you allow.",
+    "essentialTitle": "Essential",
+    "essentialDesc": "Required for basic website functionality. Cannot be disabled.",
+    "analyticsTitle": "Analytics",
+    "analyticsDesc": "Helps us understand how users interact with our site.",
+    "save": "Save",
+    "cancel": "Cancel",
+    "settingsLink": "Cookie Settings"
   }
 }

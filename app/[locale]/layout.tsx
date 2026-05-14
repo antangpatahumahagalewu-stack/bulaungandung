@@ -4,13 +4,16 @@ import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { hasLocale } from "next-intl";
 import { locales } from "@/i18n.config";
-import { AnalyticsWrapper } from "@/components/shared/AnalyticsWrapper";
+import { CookieProvider } from "@/components/cookie/CookieContext";
+import { CookieConsent } from "@/components/cookie/CookieConsent";
+import { CookiePreferences } from "@/components/cookie/CookiePreferences";
+import { AnalyticsGate } from "@/components/cookie/AnalyticsGate";
 import "@/app/globals.css";
 
 export const metadata: Metadata = {
   title: "Koperasi Bulau Ngandung",
   description:
-    "Dari Hutan Kapuas, untuk Dunia. Koperasi Perhutanan Sosial di Kabupaten Kapuas, Kalimantan Tengah.",
+    "From the Kapuas Forest, to the World. Social Forestry Cooperative in Kapuas Regency, Central Kalimantan.",
 };
 
 export default async function LocaleLayout({
@@ -27,8 +30,12 @@ export default async function LocaleLayout({
 
   return (
     <NextIntlClientProvider locale={locale} messages={messages}>
-      {children}
-      <AnalyticsWrapper />
+      <CookieProvider>
+        {children}
+        <CookieConsent />
+        <CookiePreferences />
+        <AnalyticsGate />
+      </CookieProvider>
     </NextIntlClientProvider>
   );
 }

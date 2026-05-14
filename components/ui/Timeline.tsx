@@ -11,6 +11,7 @@ interface TimelineProps {
 
 export function Timeline({ items, className }: TimelineProps) {
   const locale = useLocale();
+  const l = locale as keyof TimelineItem["title"];
 
   return (
     <div className={cn("relative", className)}>
@@ -49,10 +50,10 @@ export function Timeline({ items, className }: TimelineProps) {
               >
                 <div className="rounded-lg border border-border bg-card p-4 shadow-sm">
                   <h3 className="font-semibold text-foreground">
-                    {item.title}
+                    {item.title[l]}
                   </h3>
                   <p className="mt-1 text-sm text-muted-foreground">
-                    {item.description}
+                    {item.description[l]}
                   </p>
                 </div>
               </div>

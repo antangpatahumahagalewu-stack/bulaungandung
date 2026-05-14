@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { getTranslations } from "next-intl/server";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { SectionTitle } from "@/components/ui/SectionTitle";
@@ -18,6 +19,7 @@ export async function generateStaticParams() {
 
 export default async function DetailKelompokPage({ params }: PageProps) {
   const { locale, slug } = await params;
+  const t = await getTranslations();
   const member = await getMemberBySlug(slug);
   if (!member) notFound();
 
@@ -48,7 +50,7 @@ export default async function DetailKelompokPage({ params }: PageProps) {
           <div className="mx-auto max-w-5xl px-6 sm:px-8 lg:px-10">
             <div className="grid gap-10 md:grid-cols-3">
               <div className="md:col-span-2">
-                <SectionTitle title="Profil Kelompok" centered={false} />
+                <SectionTitle title={t("common.profilKelompok")} centered={false} />
                 <div className="space-y-4">
                   {member.deskripsi[locale as keyof typeof member.deskripsi]?.split("\n\n").map((par, i) => (
                     <p key={i} className="text-base leading-relaxed text-fg-dim">{par.trim()}</p>
@@ -57,14 +59,14 @@ export default async function DetailKelompokPage({ params }: PageProps) {
               </div>
               <aside className="space-y-6">
                 <div className="rounded-2xl bg-card border border-bdr p-6">
-                  <h3 className="font-semibold text-fg mb-4 tracking-tight">Informasi Izin</h3>
+                  <h3 className="font-semibold text-fg mb-4 tracking-tight">{t("common.infoIzin")}</h3>
                   <dl className="space-y-3 text-sm">
                     {[
-                      ["Nomor SK", member.nomorSK],
-                      ["Tanggal SK", member.tanggalSK],
-                      ["Nomor PKS", member.nomorPKS],
-                      ["Masa Berlaku", member.masaBerlaku],
-                      ["Fungsi Kawasan", member.fungsiKawasan],
+                      [t("kelompok.nomorSk") || "Nomor SK", member.nomorSK],
+                      [t("kelompok.tanggalSk") || "Tanggal SK", member.tanggalSK],
+                      [t("kelompok.nomorPks") || "Nomor PKS", member.nomorPKS],
+                      [t("kelompok.masaBerlaku") || "Masa Berlaku", member.masaBerlaku],
+                      [t("kelompok.fungsiKawasan") || "Fungsi Kawasan", member.fungsiKawasan],
                     ].map(([label, val]) => (
                       <div key={label}>
                         <dt className="text-fg-dim/60 text-xs uppercase tracking-wider">{label}</dt>
@@ -74,7 +76,7 @@ export default async function DetailKelompokPage({ params }: PageProps) {
                   </dl>
                 </div>
                 <div className="rounded-2xl bg-card border border-bdr p-6">
-                  <h3 className="font-semibold text-fg mb-4 tracking-tight">Jenis HHBK</h3>
+                  <h3 className="font-semibold text-fg mb-4 tracking-tight">{t("common.jenisHhbk")}</h3>
                   <div className="flex flex-wrap gap-2">
                     {member.jenisHhbk.map((h) => (
                       <Badge key={h} variant="accent" className="tracking-wider">{h}</Badge>
@@ -86,7 +88,7 @@ export default async function DetailKelompokPage({ params }: PageProps) {
 
             {relatedProducts.length > 0 && (
               <div className="mt-20">
-                <SectionTitle title="Produk Terkait" centered />
+                <SectionTitle title={t("common.produkTerkait")} centered />
                 <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
                   {relatedProducts.map((product) => (
                     <ProductCard key={product.slug} product={product} />

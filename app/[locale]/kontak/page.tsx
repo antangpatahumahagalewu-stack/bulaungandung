@@ -9,7 +9,7 @@ import { siteFallback } from "@/lib/data/loader";
 import { Mail, MapPin, Phone, Clock } from "lucide-react";
 
 export default function KontakPage() {
-  const t = useTranslations("kontak");
+  const t = useTranslations();
   const site = siteFallback;
 
   return (
@@ -21,11 +21,11 @@ export default function KontakPage() {
             <div className="mb-8 inline-flex items-center gap-4">
               <span className="accent-line" />
               <span className="text-xs font-semibold uppercase tracking-[0.25em] text-acc">
-                {t("title")}
+                {t("kontak.title")}
               </span>
               <span className="accent-line" />
             </div>
-            <h1 className="font-serif text-fg">{t("title")}</h1>
+            <h1 className="font-serif text-fg">{t("kontak.title")}</h1>
           </div>
         </section>
 
@@ -33,17 +33,17 @@ export default function KontakPage() {
           <div className="mx-auto max-w-5xl px-6 sm:px-8 lg:px-10">
             <div className="grid gap-12 md:grid-cols-2">
               <div>
-                <SectionTitle title={t("kirim")} centered={false} />
+                <SectionTitle title={t("kontak.kirim")} centered={false} />
                 <ContactForm />
               </div>
               <div className="space-y-8">
-                <SectionTitle title="Info Kontak" centered={false} />
+                <SectionTitle title={t("kontak.infoKontak")} centered={false} />
                 <div className="space-y-6">
                   {[
-                    { icon: MapPin, title: t("alamat"), value: site.kontakAlamat },
-                    { icon: Mail, title: t("email"), value: site.kontakEmail, href: `mailto:${site.kontakEmail}` },
-                    { icon: Phone, title: t("whatsapp"), value: site.kontakWa, href: `https://wa.me/${site.kontakWa.replace(/\D/g, "")}` },
-                    { icon: Clock, title: t("jamOperasional"), value: "Senin - Jumat: 08.00 - 16.00 WIB\nSabtu: 08.00 - 12.00 WIB" },
+                    { icon: MapPin, title: t("kontak.alamat"), value: site.kontakAlamat },
+                    { icon: Mail, title: t("kontak.email"), value: site.kontakEmail, href: `mailto:${site.kontakEmail}` },
+                    { icon: Phone, title: t("kontak.whatsapp"), value: site.kontakWa, href: `https://wa.me/${site.kontakWa.replace(/\D/g, "")}` },
+                    { icon: Clock, title: t("kontak.jamOperasional"), value: t("kontak.jamOperasionalValue") },
                   ].map((item, i) => (
                     <div key={i} className="flex items-start gap-4">
                       <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-pri-subtle">

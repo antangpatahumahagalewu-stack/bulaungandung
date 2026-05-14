@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { getTranslations } from "next-intl/server";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { SectionTitle } from "@/components/ui/SectionTitle";
@@ -9,7 +10,7 @@ import { Button } from "@/components/ui/button";
 import { getProductBySlug, getAllProductSlugs } from "@/lib/data/loader";
 import { getAllMembers } from "@/lib/data/loader";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import { ArrowLeft } from "lucide-react";
 
 interface PageProps {
@@ -23,6 +24,7 @@ export async function generateStaticParams() {
 
 export default async function DetailProdukPage({ params }: PageProps) {
   const { locale, slug } = await params;
+  const t = await getTranslations();
   const product = await getProductBySlug(slug);
   if (!product) notFound();
 
@@ -37,7 +39,7 @@ export default async function DetailProdukPage({ params }: PageProps) {
         <section className="py-16">
           <div className="mx-auto max-w-5xl px-6 sm:px-8 lg:px-10">
             <Link href="/produk" className="inline-flex items-center gap-2 text-sm font-medium text-fg-dim hover:text-fg transition-colors mb-8">
-              <ArrowLeft className="h-4 w-4" /> Kembali ke Katalog
+              <ArrowLeft className="h-4 w-4" /> {t("common.kembaliKe", { page: t("produk.title") })}
             </Link>
 
             <div className="grid gap-10 md:grid-cols-2">
@@ -53,7 +55,7 @@ export default async function DetailProdukPage({ params }: PageProps) {
                 <div className="flex items-center gap-4">
                   <p className="text-2xl font-bold text-pri tracking-tight">{product.hargaRange}</p>
                   <p className={`text-sm font-semibold tracking-wide ${product.stok > 0 ? "text-[hsl(150_50%_40%)]" : "text-destructive"}`}>
-                    {product.stok > 0 ? `Stok: ${product.stok}` : "Habis"}
+                    {product.stok > 0 ? t("common.stok", { count: product.stok }) : t("common.habis")}
                   </p>
                 </div>
                 <div className="space-y-4">
@@ -62,8 +64,8 @@ export default async function DetailProdukPage({ params }: PageProps) {
                   ))}
                 </div>
                 {member && (
-                  <Link href={`/kelompok/${member.slug}`} className="inline-flex items-center gap-1.5 text-sm font-medium text-pri hover:underline">
-                    <span className="text-fg-dim">Asal:</span> {member.nama}
+                  <Link href={{ pathname: "/kelompok/[slug]", params: { slug: member.slug } }} className="inline-flex items-center gap-1.5 text-sm font-medium text-pri hover:underline">
+                    <span className="text-fg-dim">{t("common.asal")}</span> {member.nama}
                   </Link>
                 )}
               </div>
@@ -71,7 +73,7 @@ export default async function DetailProdukPage({ params }: PageProps) {
 
             {product.cerita[l] && (
               <section className="mt-20">
-                <SectionTitle title="Cerita di Balik Produk" centered />
+                <SectionTitle title={t("common.ceritaProduk")} centered />
                 <div className="mx-auto max-w-3xl space-y-4">
                   {product.cerita[l]?.split("\n\n").map((par, i) => (
                     <p key={i} className="text-base leading-relaxed text-fg-dim">{par.trim()}</p>
@@ -81,16 +83,16 @@ export default async function DetailProdukPage({ params }: PageProps) {
             )}
 
             <section className="mt-20">
-              <SectionTitle title="Kisah Pengrajin" centered />
+              <SectionTitle title={t("common.kisahPengrajin")} centered />
               <div className="mx-auto max-w-3xl">
                 <div className="flex items-center gap-5 mb-8 justify-center">
                   <Image src={product.fotoPengrajin || "/images/placeholder.svg"} alt={product.namaPengrajin} width={72} height={72} className="rounded-full object-cover ring-2 ring-acc/20" />
                   <div>
                     <h3 className="font-semibold text-fg tracking-tight">{product.namaPengrajin}</h3>
-                    <p className="text-sm text-fg-dim mt-0.5">Pengrajin</p>
+                    <p className="text-sm text-fg-dim mt-0.5">{t("common.pengrajin")}</p>
                   </div>
                 </div>
-                <PullQuote data={{ quote: product.kutipan[l], name: product.namaPengrajin, role: "Pengrajin", foto: product.fotoPengrajin }} />
+                <PullQuote data={{ quote: product.kutipan, name: product.namaPengrajin, role: t("common.pengrajin"), foto: product.fotoPengrajin }} />
               </div>
             </section>
           </div>

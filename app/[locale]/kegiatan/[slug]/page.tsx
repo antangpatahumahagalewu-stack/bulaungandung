@@ -1,9 +1,10 @@
 import { notFound } from "next/navigation";
+import { getTranslations } from "next-intl/server";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { PhotoGallery } from "@/components/ui/PhotoGallery";
 import { getActivityBySlug, getAllActivitySlugs } from "@/lib/data/loader";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import Image from "next/image";
 import { ArrowLeft, Calendar } from "lucide-react";
 
@@ -18,6 +19,7 @@ export async function generateStaticParams() {
 
 export default async function DetailKegiatanPage({ params }: PageProps) {
   const { locale, slug } = await params;
+  const t = await getTranslations();
   const activity = await getActivityBySlug(slug);
   if (!activity) notFound();
   const l = locale as keyof typeof activity.judul;
@@ -29,7 +31,7 @@ export default async function DetailKegiatanPage({ params }: PageProps) {
         <section className="py-16">
           <div className="mx-auto max-w-4xl px-6 sm:px-8 lg:px-10">
             <Link href="/kegiatan" className="inline-flex items-center gap-2 text-sm font-medium text-fg-dim hover:text-fg transition-colors mb-8">
-              <ArrowLeft className="h-4 w-4" /> Kembali ke Kegiatan
+              <ArrowLeft className="h-4 w-4" /> {t("common.kembaliKe", { page: t("kegiatan.title") })}
             </Link>
             <h1 className="font-serif text-3xl font-bold text-fg sm:text-4xl tracking-tight">{activity.judul[l]}</h1>
             <p className="mt-3 flex items-center gap-2 text-sm text-fg-dim">
@@ -48,7 +50,7 @@ export default async function DetailKegiatanPage({ params }: PageProps) {
             </div>
             {activity.foto?.length > 1 && (
               <div className="mt-16">
-                <h2 className="mb-8 text-2xl font-serif font-bold text-fg text-center">Galeri Foto</h2>
+                <h2 className="mb-8 text-2xl font-serif font-bold text-fg text-center">{t("common.galeriFoto")}</h2>
                 <PhotoGallery photos={activity.foto.slice(1)} alt="Galeri" />
               </div>
             )}

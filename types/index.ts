@@ -130,8 +130,8 @@ export interface StatItem {
 
 export interface TimelineItem {
   year: string;
-  title: string;
-  description: string;
+  title: { id: string; en: string; zh: string; ja: string };
+  description: { id: string; en: string; zh: string; ja: string };
 }
 
 export interface PilarCerita {
@@ -142,7 +142,7 @@ export interface PilarCerita {
 }
 
 export interface PullQuoteData {
-  quote: string;
+  quote: { id: string; en: string; zh: string; ja: string };
   name: string;
   role: string;
   foto: string;

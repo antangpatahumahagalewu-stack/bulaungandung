@@ -82,28 +82,78 @@ export const siteSettings: SiteSettings = {
 export const timelineItems: TimelineItem[] = [
   {
     year: "2015",
-    title: "SK Pertama Terbit",
-    description: "LPHD Katunjung dan LPHD Petak Puti menerima SK Gubernur — tonggak awal perhutanan sosial di Kapuas.",
+    title: {
+      id: "SK Pertama Terbit",
+      en: "First Decree Issued",
+      zh: "首份法令颁布",
+      ja: "最初の許可証発行",
+    },
+    description: {
+      id: "LPHD Katunjung dan LPHD Petak Puti menerima SK Gubernur — tonggak awal perhutanan sosial di Kapuas.",
+      en: "LPHD Katunjung and LPHD Petak Puti received the Governor's Decree — the initial milestone of social forestry in Kapuas.",
+      zh: "LPHD Katunjung 和 LPHD Petak Puti 获得了省长法令——卡普阿斯社会林业的初始里程碑。",
+      ja: "LPHD Katunjung と LPHD Petak Puti が知事令を受け取りました——カプアスにおける社会林業の最初の里程碑です。",
+    },
   },
   {
     year: "2023",
-    title: "Koperasi Berdiri",
-    description: "Koperasi Perhutanan Sosial Bulau Ngandung resmi didirikan, menyatukan 25 kelompok dalam satu rumah besar.",
+    title: {
+      id: "Koperasi Berdiri",
+      en: "Cooperative Founded",
+      zh: "合作社成立",
+      ja: "協同組合設立",
+    },
+    description: {
+      id: "Koperasi Perhutanan Sosial Bulau Ngandung resmi didirikan, menyatukan 25 kelompok dalam satu rumah besar.",
+      en: "Bulau Ngandung Social Forestry Cooperative was officially founded, uniting 25 groups under one big roof.",
+      zh: "Bulau Ngandung 社会林业合作社正式成立，将25个小组统一在一个大家庭下。",
+      ja: "Bulau Ngandung 社会林業協同組合が正式に設立され、25のグループが一つ屋根の下に団結しました。",
+    },
   },
   {
     year: "2024",
-    title: "Ekspansi Anggota",
-    description: "LPHD Danau Bagantung, Mangkutup Mandiri, Berok Tunggal, dan Tampung Penyang bergabung — total anggota mencapai 25.",
+    title: {
+      id: "Ekspansi Anggota",
+      en: "Member Expansion",
+      zh: "成员扩展",
+      ja: "メンバー拡大",
+    },
+    description: {
+      id: "LPHD Danau Bagantung, Mangkutup Mandiri, Berok Tunggal, dan Tampung Penyang bergabung — total anggota mencapai 25.",
+      en: "LPHD Danau Bagantung, Mangkutup Mandiri, Berok Tunggal, and Tampung Penyang joined — total members reached 25.",
+      zh: "LPHD Danau Bagantung、Mangkutup Mandiri、Berok Tunggal 和 Tampung Penyang 加入——成员总数达到25个。",
+      ja: "LPHD Danau Bagantung、Mangkutup Mandiri、Berok Tunggal、Tampung Penyang が加入し、メンバー総数が25に達しました。",
+    },
   },
   {
     year: "2025",
-    title: "Penandatanganan PKS",
-    description: "Seluruh 25 kelompok menandatangani Perjanjian Kerja Sama (PKS) dengan koperasi — legalitas penuh kemitraan.",
+    title: {
+      id: "Penandatanganan PKS",
+      en: "Cooperation Agreement Signed",
+      zh: "合作协议签署",
+      ja: "協力協定調印",
+    },
+    description: {
+      id: "Seluruh 25 kelompok menandatangani Perjanjian Kerja Sama (PKS) dengan koperasi — legalitas penuh kemitraan.",
+      en: "All 25 groups signed a Cooperation Agreement with the cooperative — full partnership legality.",
+      zh: "全部25个小组与合作社签署了合作协议——完全的合作伙伴合法性。",
+      ja: "25グループすべてが協同組合との協力協定に署名し、完全なパートナーシップの法的根拠が確立されました。",
+    },
   },
   {
     year: "2026",
-    title: "Menuju Pasar Global",
-    description: "Produk Bulau Ngandung mulai dipasarkan ke Jepang, Korea, dan Eropa — dari tangan masyarakat adat ke panggung dunia.",
+    title: {
+      id: "Menuju Pasar Global",
+      en: "Towards Global Markets",
+      zh: "迈向全球市场",
+      ja: "グローバル市場へ",
+    },
+    description: {
+      id: "Produk Bulau Ngandung mulai dipasarkan ke Jepang, Korea, dan Eropa — dari tangan masyarakat adat ke panggung dunia.",
+      en: "Bulau Ngandung products begin reaching Japan, Korea, and Europe — from indigenous hands to the world stage.",
+      zh: "Bulau Ngandung 产品开始销往日本、韩国和欧洲——从土著人民的手中走向世界舞台。",
+      ja: "Bulau Ngandung の製品が日本、韓国、ヨーロッパへと販路を広げ始めています——先住民の手から世界の舞台へ。",
+    },
   },
 ];
 
@@ -142,25 +192,45 @@ export const pilarCerita: PilarCerita[] = [
 
 export const pullQuotes: PullQuoteData[] = [
   {
-    quote: "\"Dulu kami dianggap perambah. Sekarang kami adalah penjaga hutan yang diakui negara.\"",
-    name: "Pak Urbanus",
+    quote: {
+      id: "\"Sekarang kami bisa memasarkan HHBK dari wilayah hutan PS kami melalui Koperasi Bulau Ngandung.\"",
+      en: "\"Now we can market NTFPs from our social forestry area through the Bulau Ngandung Union.\"",
+      zh: "\"现在我们能通过Bulau Ngandung合作社销售我们社会林业区域的非木材林产品。\"",
+      ja: "\"今では、ブラウ・ガンドゥン協同組合を通じて、私たちの社会林業地域から非木材林産物を販売できるようになりました。\"",
+    },
+    name: "Pak Ganyang",
     role: "Ketua LPHD Tambak Bajai",
     foto: "/images/anggota/pak-urbanus.jpg",
   },
   {
-    quote: "\"Tangan ini mungkin kasar, tapi anyaman yang kami hasilkan sehalus mimpi.\"",
+    quote: {
+      id: "\"Tangan ini mungkin kasar, tapi anyaman yang kami hasilkan sehalus mimpi.\"",
+      en: "\"These hands may be rough, but the weave we produce is as smooth as a dream.\"",
+      zh: "\"这双手可能粗糙，但我们编织的作品却如梦境般细腻。\"",
+      ja: "\"この手は荒れているかもしれませんが、私たちが織り上げる作品は夢のように滑らかです。\"",
+    },
     name: "Ibu Veronika",
     role: "Penganyam Purun, HKM Gapoktan Tumbang Muroi",
     foto: "/images/anggota/ibu-veronika.jpg",
   },
   {
-    quote: "\"Hutan tidak butuh diselamatkan. Hutan butuh dijaga. Dan yang paling bisa menjaga adalah kami yang hidup di dalamnya.\"",
+    quote: {
+      id: "\"Hutan tidak butuh diselamatkan. Hutan butuh dijaga. Dan yang paling bisa menjaga adalah kami yang hidup di dalamnya.\"",
+      en: "\"The forest doesn't need to be saved. The forest needs to be protected. And those who can best protect it are we who live in it.\"",
+      zh: "\"森林不需要被拯救。森林需要被守护。而最能守护它们的是生活在其中的我们。\"",
+      ja: "\"森は救われる必要はありません。森は守られる必要があるのです。そして最も守ることができるのは、その中に生きる私たちです。\"",
+    },
     name: "Pak Kornelius",
     role: "Ketua LPHD Mangkutup Mandiri",
     foto: "/images/anggota/pak-kornelius.jpg",
   },
   {
-    quote: "\"Setiap botol madu yang Anda beli, Anda ikut menanam satu pohon di hutan Kapuas. Tanpa Anda sadari.\"",
+    quote: {
+      id: "\"Setiap botol madu yang Anda beli, Anda ikut menanam satu pohon di hutan Kapuas. Tanpa Anda sadari.\"",
+      en: "\"Every bottle of honey you buy, you help plant a tree in the Kapuas forest. Without you even realizing it.\"",
+      zh: "\"您购买的每一瓶蜂蜜，都在卡普阿斯森林种下了一棵树。在您不知不觉中。\"",
+      ja: "\"あなたが買う蜂蜜の一瓶一瓶が、カプアスの森に一本の木を植えることになります。あなたが気づかないうちに。\"",
+    },
     name: "Ibu Seravina",
     role: "Peternak Lebah Kelulut, HKM Harapan Baru",
     foto: "/images/anggota/ibu-seravina.jpg",

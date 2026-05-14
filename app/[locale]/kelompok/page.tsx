@@ -11,7 +11,7 @@ import { membersFallback } from "@/lib/data/loader";
 import { getMembers } from "@/lib/sanity/queries";
 
 export default function KelompokPage() {
-  const t = useTranslations("kelompok");
+  const t = useTranslations();
   const [members, setMembers] = useState(membersFallback);
   const [selectedHhbk, setSelectedHhbk] = useState<string | null>(null);
   const [selectedDesa, setSelectedDesa] = useState<string | null>(null);
@@ -48,13 +48,13 @@ export default function KelompokPage() {
             <div className="mb-8 inline-flex items-center gap-4">
               <span className="accent-line" />
               <span className="text-xs font-semibold uppercase tracking-[0.25em] text-acc">
-                {t("title")}
+                {t("kelompok.title")}
               </span>
               <span className="accent-line" />
             </div>
-            <h1 className="font-serif text-fg">{t("title")}</h1>
+            <h1 className="font-serif text-fg">{t("kelompok.title")}</h1>
             <p className="mt-4 text-sm font-medium text-fg-dim">
-              {filtered.length} dari {members.length} kelompok
+              {t("common.dari", { count: filtered.length, total: members.length })}
             </p>
           </div>
         </section>
@@ -63,7 +63,7 @@ export default function KelompokPage() {
           <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
             <div className="flex flex-wrap gap-2">
               <Button variant={!selectedHhbk ? "accent" : "outline"} size="sm" onClick={() => setSelectedHhbk(null)}>
-                Semua HHBK
+                {t("common.semua")} HHBK
               </Button>
               {allHhbk.map((h) => (
                 <Button key={h} variant={selectedHhbk === h ? "accent" : "outline"} size="sm" onClick={() => setSelectedHhbk(selectedHhbk === h ? null : h)}>
@@ -73,7 +73,7 @@ export default function KelompokPage() {
             </div>
             <div className="mt-3 flex flex-wrap gap-2">
               <Button variant={!selectedDesa ? "default" : "outline"} size="sm" onClick={() => setSelectedDesa(null)}>
-                Semua Desa
+                {t("common.semua")} Desa
               </Button>
               {allDesa.map((d) => (
                 <Button key={d} variant={selectedDesa === d ? "default" : "outline"} size="sm" onClick={() => setSelectedDesa(selectedDesa === d ? null : d)}>
